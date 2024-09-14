@@ -2,10 +2,29 @@
     if ($_GET['vpncode']) {
       if(strlen($_GET['vpncode']) == 6) {
 
+        // Wenn der Button geklickt wurde
+        if (isset($_POST['submit'])) {
+            // Aktuelles Datum und Uhrzeit
+            $timestamp = date("Y-m-d-H-i-s");
 
+            // Log-Datei öffnen
+            $logfile = 'log.txt';
+            $logmessage = $vpncode.";".$timestamp.PHP_EOL;
+
+            // In Log-Datei schreiben
+            file_put_contents($logfile, $logmessage, FILE_APPEND | LOCK_EX);
+
+            echo "<p>Die Aktion wurde erfolgreich geloggt.</p>";
+        }
+        ?>
+        <p>Ich akzeptiere mich so wie ich bin</p>
+        <form method="POST">
+          <button type="submit" name="submit">Bestätigen</button>
+        </form>
+        <?php
 
       } else {
-        $error = "";
+        echo "Error 1: Der VPN-Code ist ungültig";
       }
     } else {
       ?>
