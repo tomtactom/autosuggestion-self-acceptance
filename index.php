@@ -1,5 +1,5 @@
 <?php
-    if (!$_GET['vpncode']) {
+    if ($_GET['vpncode']) {
       if(strlen($_GET['vpncode']) == 6) {
 
 
