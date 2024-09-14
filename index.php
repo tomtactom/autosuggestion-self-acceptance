@@ -10,7 +10,7 @@
 
             // Log-Datei öffnen
             $logfile = 'log.txt';
-            $logmessage = $day.$vpncode.";".$timestamp.PHP_EOL;
+            $logmessage = $timestamp.";".$vpncode.";".$day;
 
             // In Log-Datei schreiben
             file_put_contents($logfile, $logmessage, FILE_APPEND | LOCK_EX);
