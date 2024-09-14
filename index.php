@@ -1,6 +1,7 @@
 <?php
     if ($_GET['vpncode']) {
       if(strlen($_GET['vpncode']) == 6) {
+        $vpncode = htmlspecialchars($_GET['vpncode']);
 
         // Wenn der Button geklickt wurde
         if (isset($_POST['submit'])) {
