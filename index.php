@@ -15,6 +15,7 @@
             file_put_contents($logfile, $logmessage, FILE_APPEND | LOCK_EX);
 
             echo "<p>Die Aktion wurde erfolgreich geloggt.</p>";
+            exit;
         }
         ?>
         <p>Ich akzeptiere mich so wie ich bin</p>
