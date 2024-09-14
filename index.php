@@ -1,6 +1,7 @@
 <?php
     if (isset($_GET['vpncode']) && strlen($_GET['vpncode']) == 6 && isset($_GET['day']) && is_numeric($_GET['day']) && intval($_GET['day']) >= 1 && intval($_GET['day']) <= 14) {
         $vpncode = htmlspecialchars($_GET['vpncode']);
+        $day = htmlspecialchars($_GET['day']);
 
         // Wenn der Button geklickt wurde
         if (isset($_POST['submit'])) {
@@ -9,7 +10,7 @@
 
             // Log-Datei öffnen
             $logfile = 'log.txt';
-            $logmessage = $vpncode.";".$timestamp.PHP_EOL;
+            $logmessage = $day.$vpncode.";".$timestamp.PHP_EOL;
 
             // In Log-Datei schreiben
             file_put_contents($logfile, $logmessage, FILE_APPEND | LOCK_EX);
