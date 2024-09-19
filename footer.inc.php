@@ -64,7 +64,7 @@ include 'informations.inc.php';
                       E-Mail: <?php echo $privateData['email']; ?></p>
 
                       <p><strong>2. Welche Daten erfassen wir und warum?</strong></p>
-                      <ul>
+                      <ul style="text-align: left;">
                           <li><strong>Technische Daten:</strong> Wie bei vielen Webseiten üblich, erfassen wir technische Informationen wie Ihre IP-Adresse, den Browsertyp und das Datum sowie die Uhrzeit Ihres Besuchs. Diese Daten helfen uns, die Webseite zu optimieren und sicherzustellen, dass alles reibungslos funktioniert.</li>
                           <li><strong>Formulardaten:</strong> Wenn Sie unser Formular nutzen, speichern wir Ihre E-Mail-Adresse, um Ihnen wichtige Informationen oder Updates zukommen zu lassen.</li>
                           <li><strong>Pseudonymisierte Daten:</strong> Wir verwenden einen VPN-Code, der gemeinsam mit den Daten durch SoSciSurvey verarbeitet wird. Diese Daten sind pseudonymisiert und werden ausschließlich zu Forschungszwecken verwendet.</li>
