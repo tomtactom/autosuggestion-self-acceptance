@@ -28,7 +28,7 @@
                 <div class="modal-body">
                     <p><strong>Impressum</strong></p>
                     <p><strong>Verantwortlich:</strong> <?php echo $privateData['name']; ?></p>
-                    <p><strong>Telefonnummer: <?php echo $privateData['phone']; ?></strong></p>
+                    <p><strong>Telefonnummer:</strong> <?php echo $privateData['phone']; ?></p>
                     <p><strong>Adresse:</strong> <?php echo $privateData['address']; ?></p>
                     <p><strong>Haftungsausschluss:</strong> Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Der Anbieter übernimmt jedoch keine Gewähr für die Vollständigkeit und Richtigkeit der bereitgestellten Informationen. Die Website ist ab 16 Jahren zur Verwendung erlaubt.</p>
                     <p><strong>Hochschule:</strong> <?php echo $privateData['university']; ?></p>
