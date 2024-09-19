@@ -1,3 +1,7 @@
+<?php
+// Einbinden der privaten Daten
+include 'informations.inc.php';
+?>s
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -9,7 +13,7 @@
       <!-- SEO Meta-Tags -->
       <meta name="description" content="Webtool als Intervention zur Erhöhung der Selbstakzeptanz. Im Rahmen der Bachelorarbeit">
       <meta name="keywords" content="Selbstakzeptanz, Autosuggestion, Studie, Psychologie">
-      <meta name="author" content="Tom Aschmann">
+      <meta name="author" content="<?php echo $privateData['name']; ?>">
 
       <!-- Favicon -->
       <!--<link rel="icon" href="favicon.png" type="image/png">-->

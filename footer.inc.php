@@ -1,7 +1,3 @@
-<?php
-// Einbinden der privaten Daten
-include 'informations.inc.php';
-?>
   </main>
 <footer>
     <div class="container">
