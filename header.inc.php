@@ -1,7 +1,7 @@
 <?php
 // Einbinden der privaten Daten
 include 'informations.inc.php';
-?>s
+?>ss
 <!DOCTYPE html>
 <html lang="de">
   <head>
