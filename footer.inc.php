@@ -106,7 +106,7 @@ include 'informations.inc.php';
                       <p>Änderungen dieser Datenschutzerklärung werden per E-Mail an die von Ihnen angegebene Adresse kommuniziert. Es liegt in Ihrer Verantwortung, sich über etwaige Änderungen zu informieren. Bei fehlender E-Mail-Adresse sind Sie eigenverantwortlich, sich regelmäßig über Aktualisierungen zu informieren.</p>
 
                       <p><strong>11. SoSciSurvey und Auftragsverarbeitung</strong></p>
-                      <p>SoSciSurvey verarbeitet die von Ihnen bereitgestellten pseudonymisierten Daten im Auftrag von Tom Aschmann gemäß dem abgeschlossenen Auftragsverarbeitungsvertrag. SoSciSurvey verpflichtet sich, die Daten gemäß den geltenden Datenschutzbestimmungen zu schützen und ausschließlich für die in der Studie vorgesehenen Zwecke zu verwenden.</p>
+                      <p>SoSciSurvey verarbeitet die von Ihnen bereitgestellten pseudonymisierten Daten im Auftrag von <?php echo $privateData['name']; ?> gemäß dem abgeschlossenen Auftragsverarbeitungsvertrag. SoSciSurvey verpflichtet sich, die Daten gemäß den geltenden Datenschutzbestimmungen zu schützen und ausschließlich für die in der Studie vorgesehenen Zwecke zu verwenden.</p>
 
                 </div>
                 <div class="modal-footer">
