@@ -18,6 +18,35 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       <link rel="stylesheet" href="path/to/your-stylesheet.css">
 
+      <style>
+          /* Basis Reset */
+          html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+          }
+
+          /* Wrapper für Flexbox Layout */
+          .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+          }
+
+          /* Hauptinhalt soll sich ausdehnen */
+          main {
+            flex: 1;
+          }
+
+          /* Footer-Styling */
+          footer {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+          }
+      </style
+
       <!-- JavaScript-Dateien -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -32,3 +61,6 @@
             <p class="lead">Einleitungstext oder Untertitel hier eingeben.</p>
         </div>
     </header>
+    <div class="wrapper">
+        <!-- Dein Hauptinhalt hier -->
+        <main>
