@@ -54,13 +54,13 @@
 
       <title>Selbstakzeptanz Autosuggestion</title>
   </head>
-<body>
+<body class="wrapper">
   <header>
         <div class="container">
             <h1 class="my-4">Titel der Seite</h1>
             <p class="lead">Einleitungstext oder Untertitel hier eingeben.</p>
         </div>
     </header>
-    <div class="wrapper">
-        <!-- Dein Hauptinhalt hier -->
-        <main>
+
+    <!-- Dein Hauptinhalt hier -->
+    <main>
