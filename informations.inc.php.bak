@@ -1,0 +1,13 @@
+<?php
+// Dateiendung lokal umbenennen, also die Endung '.bak' entfernen. Damit persönliche Daten nicht auf GitHub gespeichert sind.
+// informations.inc.php
+
+// Private Informationen
+$privateData = array(
+    'email' => '',
+    'phone' => '',
+    'name' => '',
+    'address' => '',
+    'university' => ''
+);
+?>

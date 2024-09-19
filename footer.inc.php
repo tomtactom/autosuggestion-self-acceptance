@@ -59,7 +59,7 @@ include 'informations.inc.php';
 
                       <p><strong>1. Wer ist für die Datenverarbeitung verantwortlich?</strong></p>
                       <p><?php echo $privateData['name']; ?><br>
-                      <?php echo $privateData['adress']; ?><br>
+                      <?php echo $privateData['address']; ?><br>
                       Telefon: <?php echo $privateData['phone']; ?><br>
                       E-Mail: <?php echo $privateData['email']; ?></p>
 
@@ -89,7 +89,7 @@ include 'informations.inc.php';
                       <p><strong>8. Kontakt bei Datenschutzfragen</strong></p>
                       <p>Wenn Sie Fragen zum Datenschutz haben oder Ihre Rechte ausüben möchten, können Sie uns gerne kontaktieren:<br>
                       <?php echo $privateData['name']; ?><br>
-                      <?php echo $privateData['adress']; ?><br>
+                      <?php echo $privateData['address']; ?><br>
                       Telefon: <?php echo $privateData['phone']; ?><br>
                       E-Mail: <?php echo $privateData['email']; ?></p>
 
