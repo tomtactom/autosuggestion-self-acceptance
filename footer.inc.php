@@ -1,9 +1,8 @@
 <?php
-// footer.inc.php
-
 // Einbinden der privaten Daten
 include 'informations.inc.php';
 ?>
+  </main>
 <footer>
     <div class="container">
         <div class="row">
@@ -47,7 +46,7 @@ include 'informations.inc.php';
     <!-- Datenschutz Modal -->
     <div class="modal fade" id="datenschutzModal" tabindex="-1" role="dialog" aria-labelledby="datenschutzModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content">s
                 <div class="modal-header">
                     <h5 class="modal-title" id="datenschutzModalLabel">Datenschutz</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">

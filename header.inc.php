@@ -19,33 +19,32 @@
       <link rel="stylesheet" href="path/to/your-stylesheet.css">
 
       <style>
-      /* Basis Reset */
-      html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      }
+          /* Basis Reset */
+          html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+          }
 
-      /* Wrapper für Flexbox Layout */
-      .wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* Stellen Sie sicher, dass die Höhe mindestens der Ansichtshöhe entspricht */
-      }
+          /* Wrapper für Flexbox Layout */
+          .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+          }
 
-      /* Hauptinhalt soll sich ausdehnen */
-      main {
-      flex: 1;
-      }
+          /* Hauptinhalt soll sich ausdehnen */
+          main {
+            flex: 1;
+          }
 
-      /* Footer-Styling */
-      footer {
-      background-color: #f8f9fa;
-      padding: 1rem;
-      text-align: center;
-      border-top: 1px solid #dee2e6;
-      }
-
+          /* Footer-Styling */
+          footer {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+          }
       </style
 
       <!-- JavaScript-Dateien -->
