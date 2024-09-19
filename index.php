@@ -1,4 +1,29 @@
 <?php
+    required('./header.inc.php'); # Header Datei, in welcher beginnende Inhalte gespeichert sind, die auf jeder Seite anfangs eingebunden werden
+    if (isset($_GET['vpncode']) && strlen($_GET['vpncode']) == 6 && is_numeric($_GET['group']) && (intval($_GET['group']) == 1 || intval($_GET['group']) == 2)) { # Abfrage der immer benötigten GET-Parameter
+        if (isset($_GET['register']) && !isset($_GET['day'])) { # Abfrage ob Person registriert werden soll (und Ausschluss des day-GET-Parameters)
+
+            ?>
+              <form method="post" action="?<?php echo htmlspecialchars($_SERVER['QUERY_STRING']); ?>">
+                  <label for="email">
+                    <input type="email" id="email" name="email" placeholder="E-Mail-Adresse">
+                  </label>
+                  <input type="submit">
+              </form>
+            <?php
+
+        } elseif (isset($_GET['day']) && is_numeric($_GET['day']) && intval($_GET['day']) >= 1 && intval($_GET['day']) <= 14 && !isset($_GET['register'])) { # Abfrage ob day-GET-Parameter gesetzt ist (und Ausschluss des register-GET-Parameters)
+
+
+
+        } else {
+          echo "Error 1";
+        }
+    } else {
+      echo "Error 2";
+    }
+
+
     if (isset($_GET['vpncode']) && strlen($_GET['vpncode']) == 6 && isset($_GET['day']) && is_numeric($_GET['day']) && intval($_GET['day']) >= 1 && intval($_GET['day']) <= 14) {
         $vpncode = htmlspecialchars($_GET['vpncode']);
         $day = htmlspecialchars($_GET['day']);
@@ -39,3 +64,4 @@
         </form>
       <?php
     }
+    required('./footer.inc.php');
