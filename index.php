@@ -64,4 +64,4 @@
         </form>
       <?php
     }
-    required('./footer.inc.php');
+    require './footer.inc.php';
