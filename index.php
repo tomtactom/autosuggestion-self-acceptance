@@ -6,11 +6,11 @@
             <h2>Dies ist die Anmeldung für die Intervention zur Selbstakzeptanz.</h2>
             <h4>Bitte gebe deine E-Mail-Adresse unten ein. Du bekommst eine automatisch E-Mail zugesendet.</h4>
             <?php
-            if (intval($_GET['group']) = 1) { # Interventionsgruppe
+            if (intval($_GET['group']) == 1) { # Interventionsgruppe
               ?>
               <p>Du bekommst 10 Tage lang jeden Tag morgens und Abends eine kleine Aufgabe. Dies dauert nur 5 Minuten und hilft dir deine Selbstakzeptanz zu erhöhen.</p>
               <?php
-            } elseif (intval($_GET['group']) = 2) { # Kontrollgruppe
+            } elseif (intval($_GET['group']) == 2) { # Kontrollgruppe
               ?>
               <p>Du bekommst eine Aufgabe zur per E-Mail zugesendet. Diese hilft dir deine Selbstakzeptanz zu erhöhen.</p>
               <?php
