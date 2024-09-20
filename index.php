@@ -2,6 +2,7 @@
     require './header.inc.php'; # Header Datei, in welcher beginnende Inhalte gespeichert sind, die auf jeder Seite anfangs eingebunden werden
     if (isset($_GET['vpncode']) && strlen($_GET['vpncode']) == 6 && is_numeric($_GET['group']) && (intval($_GET['group']) == 1 || intval($_GET['group']) == 2)) { # Abfrage der immer benötigten GET-Parameter
         if (isset($_GET['register']) && !isset($_GET['day'])) { # Abfrage ob Person registriert werden soll (und Ausschluss des day-GET-Parameters)
+          if ($_GET['register'] == 1) {
             ?>
             <h4 style="text-align: center">Dies ist die Anmeldung für die Intervention zur Selbstakzeptanz.</h4>
             <h5 style="text-align: center">Bitte gebe deine E-Mail-Adresse unten ein. Du bekommst eine automatisch E-Mail zugesendet.</h5>
@@ -23,14 +24,25 @@
                 Als Student der HSRW bekommst du dann auch deine 3,5 Versuchspersonenstunden gutgeschrieben.<br>
                 Mit deiner Teilnahme leistest du einen großen Beitrag zur Wissenschaft und unterstützt mich sehr bei meiner Bachelorarbeit. Vielen Dank!
               </p>
-              <form method="post" action="?<?php echo htmlspecialchars($_SERVER['QUERY_STRING']); ?>">
+              <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&group=<?php echo $_GET['group']; ?>&d">
                   <label for="email">
                     <input type="email" id="email" name="email" placeholder="E-Mail-Adresse">
                   </label>
                   <input type="submit" value="Mit der Übung beginnen">
               </form>
             </div>
+
             <?php
+          } elseif ($_GET['register'] == 2) {
+              ?>
+              <p class="container">
+                Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. Bitte lese dir die E-Mail gut durch. Solltest du keine E-Mail erhalten haben schreibe mir bitte <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a>.<br>
+                Du kannst diese Seite nun  schließen 🙂.
+              </p>
+              <?php
+          } else {
+            echo "Error 3 - Ungültiger register Parameter";
+          }
 
         } elseif (isset($_GET['day']) && is_numeric($_GET['day']) && intval($_GET['day']) >= 1 && intval($_GET['day']) <= 14 && !isset($_GET['register'])) { # Abfrage ob day-GET-Parameter gesetzt ist (und Ausschluss des register-GET-Parameters)
 
