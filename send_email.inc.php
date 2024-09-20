@@ -15,7 +15,9 @@ function sendEmail($email, $group) {
     }
 
     // E-Mail Header
-    $headers = "From: " . $privateData['server_email'];
+    $headers = "From: " . $privateData['server_email'] . "\r\n" .
+           "Reply-To: " . $privateData['server_email'] . "\r\n" .
+           "X-Mailer: PHP/" . phpversion();
 
     // E-Mail senden
     return mail($email, $subject, $message, $headers);
