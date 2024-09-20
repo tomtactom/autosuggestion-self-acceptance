@@ -38,7 +38,7 @@
           } elseif ($_GET['register'] == 2) {
               ?>
               <p class="container">
-                Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. Bitte lese dir die E-Mail gut durch. Solltest du keine E-Mail erhalten haben schreibe mir bitte <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a>.<br>
+                Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. <strong>Bitte lese dir die E-Mail gut durch.</strong> Solltest du keine E-Mail erhalten haben schreibe mir bitte über die E-Mail-Adresse <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a>.<br>
                 Du kannst diese Seite nun  schließen 🙂.
               </p>
               <?php
