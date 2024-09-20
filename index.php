@@ -46,8 +46,8 @@
               $note = null; // Kann später gesetzt werden, wenn nötig
 
               // SQL-Statement zum Einfügen der Daten
-              $sql = "INSERT INTO registrations (vpncode, email, day, note)
-                      VALUES ('$vpncode', '$email', '$day', '$note')";
+              $sql = "INSERT INTO registrations (vpncode, email, `group`, day, note)
+                      VALUES ('$vpncode', '$email', $group, '$day', '$note')";
 
               if ($conn->query($sql) === TRUE) {
                   echo "Registrierung erfolgreich!";
