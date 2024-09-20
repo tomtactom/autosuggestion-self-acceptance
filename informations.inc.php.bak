@@ -5,6 +5,7 @@
 // Private Informationen
 $privateData = array(
     'email' => '',
+    'server_email' => '',
     'phone' => '',
     'name' => '',
     'address' => '',

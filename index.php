@@ -1,5 +1,6 @@
 <?php
     require './header.inc.php'; # Header Datei, in welcher beginnende Inhalte gespeichert sind, die auf jeder Seite anfangs eingebunden werden
+    require './send_email.inc.php';
     if (isset($_GET['vpncode']) && strlen($_GET['vpncode']) == 6 && is_numeric($_GET['group']) && (intval($_GET['group']) == 1 || intval($_GET['group']) == 2)) { # Abfrage der immer benötigten GET-Parameter
         if (isset($_GET['register']) && !isset($_GET['day'])) { # Abfrage ob Person registriert werden soll (und Ausschluss des day-GET-Parameters)
           if ($_GET['register'] == 1) {
@@ -58,11 +59,17 @@
                   $sql = "INSERT INTO registrations (vpncode, email, `group`, day, note)
                           VALUES ('$vpncode', '$email', $group, '$day', '$note')";
 
-                  if ($conn->query($sql) === TRUE) {
-                      echo "<p class='container'>Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. <strong>Bitte lese dir die E-Mail gut durch.</strong> Solltest du keine E-Mail erhalten haben schreibe mir bitte über die E-Mail-Adresse <a href='mailto:tom-john.aschmann@hsrw.org'>tom-john.aschmann@hsrw.org</a>.<br>Du kannst diese Seite nun schließen 🙂.</p>";
-                  } else {
-                      echo "Fehler: " . $sql . "<br>" . $conn->error; // Ausgabe des Fehlers
-                  }
+                          if ($conn->query($sql) === TRUE) {
+                              // E-Mail versenden
+                              if (sendEmail($email, $group)) {
+                                  echo "<p class='container'>Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. <strong>Bitte lese dir die E-Mail gut durch.</strong> Solltest du keine E-Mail erhalten haben schreibe mir bitte über die E-Mail-Adresse <a href='mailto:tom-john.aschmann@hsrw.org'>tom-john.aschmann@hsrw.org</a>.<br>Du kannst diese Seite nun schließen 🙂.</p>";
+                              } else {
+                                  echo "Fehler beim Versenden der E-Mail.";
+                              }
+                          } else {
+                              echo "Fehler: " . $sql . "<br>" . $conn->error; // Ausgabe des Fehlers
+                          }
+
               }
 
               $conn->close(); // Verbindung schließen
