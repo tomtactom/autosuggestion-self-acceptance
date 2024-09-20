@@ -34,10 +34,10 @@
           <?php
 
         } else {
-          echo "Error 1";
+          echo "Error 1 - Weder die Interventionsseite (day) noch die Registrierungsseite (register) wurde ausgewählt.";
         }
     } else {
-      echo "Error 2";
+      echo "Error 2 - Der VPN-Code ist ungültig und/oder die Gruppenzuordnung ist ungültig";
     }
 
 /*
