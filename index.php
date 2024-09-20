@@ -24,7 +24,9 @@
                 Als Student der HSRW bekommst du dann auch deine 3,5 Versuchspersonenstunden gutgeschrieben.<br>
                 Mit deiner Teilnahme leistest du einen großen Beitrag zur Wissenschaft und unterstützt mich sehr bei meiner Bachelorarbeit. Vielen Dank!
               </p>
-              <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&group=<?php echo $_GET['group']; ?>&d">
+              <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&group=<?php echo $_GET['group']; ?>&register=2">
+                  <input type="hidden" name="vpncode" value="<?php echo $_GET['vpncode']; ?>">
+                  <input type="hidden" name="group" value="<?php echo $_GET['group']; ?>">
                   <label for="email">
                     <input type="email" id="email" name="email" placeholder="E-Mail-Adresse">
                   </label>
