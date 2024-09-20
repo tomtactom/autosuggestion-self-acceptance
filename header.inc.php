@@ -8,15 +8,18 @@ $username = $privateData['db_username']; // ggf. anpassen
 $password = $privateData['db_password']; // ggf. anpassen
 $dbname = $privateData['db_dbname']; // ggf. anpassen
 
-// Verbindung erstellen
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Verbindung zum MySQL-Server (ohne Datenbank) herstellen
+$conn = new mysqli($servername, $username, $password);
 
-// Verbindung überprüfen
+// Überprüfen, ob die Verbindung erfolgreich war
 if ($conn->connect_error) {
     die("Verbindung fehlgeschlagen: " . $conn->connect_error);
 }
 
-if ($db_check->num_rows == 0) {
+// Überprüfen, ob die Datenbank existiert
+$db_check = $conn->query("SHOW DATABASES LIKE '$dbname'");
+
+if ($db_check !== false && $db_check->num_rows == 0) {
     // Datenbank erstellen, falls sie nicht existiert
     $conn->query("CREATE DATABASE IF NOT EXISTS $dbname");
 }
@@ -27,7 +30,7 @@ $conn->select_db($dbname);
 // Überprüfen, ob die Tabelle existiert
 $table_check = $conn->query("SHOW TABLES LIKE 'registrations'");
 
-if ($table_check->num_rows == 0) {
+if ($table_check !== false && $table_check->num_rows == 0) {
     // Tabelle erstellen, falls sie nicht existiert
     $conn->query("
     CREATE TABLE IF NOT EXISTS registrations (
