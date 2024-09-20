@@ -40,7 +40,7 @@ include 'informations.inc.php';
           /* Hauptinhalt soll sich ausdehnen */
           main {
             flex: 1;
-            padding: 1rem;
+            padding: 5rem;
           }
 
           /* Footer-Styling */
