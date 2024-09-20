@@ -129,5 +129,5 @@
 
 <?php
     // MySQL Datenbank Schließen
-    $conn->close(); // Verbindung schließen
+    #$conn->close(); // Verbindung schließen
 ?>
