@@ -1,6 +1,21 @@
 <?php
 // Einbinden der privaten Daten
 include 'informations.inc.php';
+
+// Datenbankverbindung herstellen
+$servername = $privateData['db_servername']; // ggf. anpassen
+$username = $privateData['db_username']; // ggf. anpassen
+$password = $privateData['db_password']; // ggf. anpassen
+$dbname = $privateData['db_dbname']; // ggf. anpassen
+
+// Verbindung erstellen
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verbindung überprüfen
+if ($conn->connect_error) {
+    die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="de">

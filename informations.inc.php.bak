@@ -8,6 +8,10 @@ $privateData = array(
     'phone' => '',
     'name' => '',
     'address' => '',
-    'university' => ''
+    'university' => '',
+    'db_servername' => '',
+    'db_username' => '',
+    'db_password' => '',
+    'db_dbname' => ''
 );
 ?>
