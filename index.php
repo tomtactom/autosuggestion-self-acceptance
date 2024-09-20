@@ -36,6 +36,35 @@
 
             <?php
           } elseif ($_GET['register'] == 2) {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $vpncode = $conn->real_escape_string($_POST['vpncode']);
+                $email = $conn->real_escape_string($_POST['email']);
+                $group = intval($_POST['group']); // Typumwandlung
+                $day = json_encode(null); // Optional anpassen
+                $note = null; // Optional anpassen
+
+                // Überprüfung auf Duplikate
+                $check_sql = "SELECT COUNT(*) AS count FROM registrations WHERE vpncode = '$vpncode' AND email = '$email'";
+                $result = $conn->query($check_sql);
+                $row = $result->fetch_assoc();
+
+                if ($row['count'] > 0) {
+                    // Duplikat gefunden
+                    echo "Fehler: Diese Kombination aus VPN-Code und E-Mail ist bereits registriert.";
+                } else {
+                    // SQL-Statement zum Einfügen
+                    $sql = "INSERT INTO registrations (vpncode, email, `group`, day, note)
+                            VALUES ('$vpncode', '$email', $group, '$day', '$note')";
+
+                    if ($conn->query($sql) === TRUE) {
+                        echo "Registrierung erfolgreich!";
+                    } else {
+                        echo "Fehler: " . $sql . "<br>" . $conn->error; // Ausgabe des Fehlers
+                    }
+                }
+            }
+
+
             // Daten aus dem Formular holen
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $vpncode = $conn->real_escape_string($_POST['vpncode']);
