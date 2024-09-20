@@ -3,8 +3,8 @@
     if (isset($_GET['vpncode']) && strlen($_GET['vpncode']) == 6 && is_numeric($_GET['group']) && (intval($_GET['group']) == 1 || intval($_GET['group']) == 2)) { # Abfrage der immer benötigten GET-Parameter
         if (isset($_GET['register']) && !isset($_GET['day'])) { # Abfrage ob Person registriert werden soll (und Ausschluss des day-GET-Parameters)
             ?>
-            <h2>Dies ist die Anmeldung für die Intervention zur Selbstakzeptanz.</h2>
-            <h4>Bitte gebe deine E-Mail-Adresse unten ein. Du bekommst eine automatisch E-Mail zugesendet.</h4>
+            <h4>Dies ist die Anmeldung für die Intervention zur Selbstakzeptanz.</h4>
+            <h5>Bitte gebe deine E-Mail-Adresse unten ein. Du bekommst eine automatisch E-Mail zugesendet.</h5>
             <?php
             if (intval($_GET['group']) == 1) { # Interventionsgruppe
               ?>
