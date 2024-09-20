@@ -126,3 +126,8 @@
 </script>
 </body>
 </html>
+
+<?php
+    // MySQL Datenbank Schließen
+    $conn->close(); // Verbindung schließen
+?>

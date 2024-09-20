@@ -44,10 +44,6 @@ if ($table_check !== false && $table_check->num_rows == 0) {
         timestamp_of_last_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )");
 }
-
-// Verbindung schließen
-$conn->close();
-
 ?>
 <!DOCTYPE html>
 <html lang="de">
