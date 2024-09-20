@@ -41,6 +41,7 @@
               $vpncode = $conn->real_escape_string($_POST['vpncode']);
               $email = $conn->real_escape_string($_POST['email']);
               $group = intval($_POST['group']);  // Annahme, dass group als Integer übergeben wird
+              echo '#####'.$_POST['group'];
               $day = json_encode(null); // Optional falls day nicht gesetzt, kannst du dies später dynamisch anpassen
               $note = null; // Kann später gesetzt werden, wenn nötig
 
