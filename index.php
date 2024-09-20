@@ -36,6 +36,26 @@
 
             <?php
           } elseif ($_GET['register'] == 2) {
+            // Daten aus dem Formular holen
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              $vpncode = $conn->real_escape_string($_POST['vpncode']);
+              $email = $conn->real_escape_string($_POST['email']);
+              $group = intval($_POST['group']);  // Annahme, dass group als Integer übergeben wird
+              $day = json_encode(null); // Optional falls day nicht gesetzt, kannst du dies später dynamisch anpassen
+              $note = null; // Kann später gesetzt werden, wenn nötig
+
+              // SQL-Statement zum Einfügen der Daten
+              $sql = "INSERT INTO registrations (vpncode, email, day, note)
+                      VALUES ('$vpncode', '$email', '$day', '$note')";
+
+              if ($conn->query($sql) === TRUE) {
+                  echo "Registrierung erfolgreich!";
+              } else {
+                  echo "Fehler: " . $sql . "<br>" . $conn->error;
+              }
+            }
+            $conn->close(); // Verbindung schließen
+
               ?>
               <p class="container">
                 Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. <strong>Bitte lese dir die E-Mail gut durch.</strong> Solltest du keine E-Mail erhalten haben schreibe mir bitte über die E-Mail-Adresse <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a>.<br>
