@@ -19,8 +19,8 @@
             <div class="container">
               <p>
                 Nach 10 Tagen bekommst du eine weitere E-Mail mit einem Link für den zweiten Fragebogen. <strong>Dieser zweite Fragebogen ist sehr wichtig!</strong><br>
-                Als <strong>Dankeschön<strong> kannst du, nach Abschluss der Intervention und des zweiten Fragebogens, an einer Verlosung von 3x 10 € Wunschgutscheinen teilnehmen, bekommst eine 3-monatige gratis Premium Mitgliedschaft der Meditationsapp 7mind und bekommst Zugang zu der fertigen Studie.<br>
-                Als Student der HSRW bekommst du dann auch deine <!-- 3,5? --> Versuchspersonenstunden gutgeschrieben.
+                Als <strong>Dankeschön</strong> kannst du, nach Abschluss der Intervention und des zweiten Fragebogens, an einer Verlosung von 3x 10 € Wunschgutscheinen teilnehmen, bekommst eine 3-monatige gratis Premium Mitgliedschaft der Meditationsapp 7mind und bekommst Zugang zu der fertigen Studie.<br>
+                Als Student der HSRW bekommst du dann auch deine 3,5 Versuchspersonenstunden gutgeschrieben.<br>
                 Mit deiner Teilnahme leistest du einen großen Beitrag zur Wissenschaft und unterstützt mich sehr bei meiner Bachelorarbeit. Vielen Dank!
               </p>
               <form method="post" action="?<?php echo htmlspecialchars($_SERVER['QUERY_STRING']); ?>">
