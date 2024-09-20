@@ -27,7 +27,7 @@
                   <label for="email">
                     <input type="email" id="email" name="email" placeholder="E-Mail-Adresse">
                   </label>
-                  <input type="submit">
+                  <input type="submit" value="Mit der Übung beginnen">
               </form>
             </div>
             <?php
