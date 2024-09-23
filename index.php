@@ -54,7 +54,7 @@
 
               if ($row['count'] > 0) {
                   // Duplikat gefunden
-                  echo "Fehler: Diese Kombination aus VPN-Code und E-Mail ist bereits registriert.";
+                  echo '<div class="alert alert-warning" role="alert">Fehler: Diese Kombination aus VPN-Code und E-Mail ist bereits registriert.</div>';
               } else {
                   // SQL-Statement zum Einfügen der Daten
                   $sql = "INSERT INTO registrations (vpncode, email, `group`, day, note)
@@ -65,27 +65,24 @@
                               if (sendEmail($email, $group)) {
                                   echo "<p class='container'>Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. <strong>Bitte lese dir die E-Mail gut durch.</strong> Solltest du keine E-Mail erhalten haben schreibe mir bitte über die E-Mail-Adresse <a href='mailto:tom-john.aschmann@hsrw.org'>tom-john.aschmann@hsrw.org</a>.<br>Du kannst diese Seite nun schließen 🙂.</p>";
                               } else {
-                                  echo "Fehler beim Versenden der E-Mail.";
+                                  echo '<div class="alert alert-danger" role="alert">Fehler beim Versenden der E-Mail.</div>';
                               }
                           } else {
-                              echo "Fehler: " . $sql . "<br>" . $conn->error; // Ausgabe des Fehlers
+                              echo "<div class='alert alert-danger' role='alert'>Fehler: " . $sql . "<br>" . $conn->error."</div>"; // Ausgabe des Fehlers
                           }
 
               }
 
               $conn->close(); // Verbindung schließen
             }
-
+            echo '<div class="alert alert-primary" role="alert">Du wurdest erfolgreich registriert. Bitte schaue in dein E-Mail-Postfach.</div>';
 
           } else {
-            echo "Error 3 - Ungültiger register Parameter";
+            echo '<div class="alert alert-danger" role="alert">Fehler 4 - Ein ungültiger Registrierungsparameter wurde angegeben.</div>';
           }
-// Intervention
+          // Intervention
         } elseif (isset($_GET['day']) && is_numeric($_GET['day']) && intval($_GET['day']) >= 1 && intval($_GET['day']) <= 14 && !isset($_GET['register'])) { # Abfrage ob day-GET-Parameter gesetzt ist (und Ausschluss des register-GET-Parameters)
 
-          /*
-            BITTE HIER EINFÜGEN
-          */
           // Überprüfen, ob der VPN-Code in der Datenbank existiert
           $vpncode = $conn->real_escape_string($_GET['vpncode']);
           $day_input = intval($_GET['day']);
