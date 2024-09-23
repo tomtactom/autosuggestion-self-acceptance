@@ -27,7 +27,7 @@
                 <ul>
                   <li>an einer Verlosung von 3x 10 € Wunschgutscheinen teilnehmen, </li>
                   <li>bekommst eine 3-monatige gratis Premium Mitgliedschaft der Meditationsapp 7mind</li>
-                  <li>und bekommst Zugang zu der fertigen Studie.</li><br>
+                  <li>und bekommst Zugang zu der fertigen Studie, also den Ergebnissen.</li><br>
                   <li>Als Student der HSRW bekommst du dann auch deine 3,5 Versuchspersonenstunden gutgeschrieben.</li><br>
                 </ul>
               <p>
@@ -169,7 +169,7 @@
               }
 
 
-              if ($daily_task_finished == false) {
+              if ($daily_task_finished == false && $_GET['group'] != 2) {
               // Satz anzeigen
               // Formular erstellen
               ?>
