@@ -114,6 +114,7 @@
                   $conn->query($update_sql);
               }
 
+              if ($daily_task_finished = false) {
               // Satz anzeigen
               echo "<p>Ich akzeptiere mich so wie ich bin.</p>";
 
@@ -122,12 +123,16 @@
               <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>&group=<?php echo $_GET['group']; ?>">
                   <input type="hidden" name="vpncode" value="<?php echo $_GET['vpncode']; ?>">
                   <input type="hidden" name="day" value="<?php echo $_GET['day']; ?>">
-                  <input type="submit" value="Aufgabe abschließen">
+                  <input type="submit" name="daily_task" value="Aufgabe abschließen">
               </form>
               <?php
-
+            } else {
+              ?>
+              <p>Du hast die Übung erfolgreich abgeschlossen!</p>
+              <?php
+            }
               // Prüfen, ob das Formular abgesendet wurde
-              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['daily_task'])) {
                   // JSON-Daten erneut laden, falls sie aktualisiert wurden
                   $day_data = json_decode($row['day'], true);
 
@@ -145,7 +150,7 @@
                   $update_sql = "UPDATE registrations SET day = '$day_json' WHERE vpncode = '$vpncode'";
 
                   if ($conn->query($update_sql) === TRUE) {
-                      echo "<p>Deine Aufgabe wurde erfolgreich abgeschlossen!</p>";
+                      $daily_task_finished = true;
                   } else {
                       echo "Fehler beim Aktualisieren der Daten: " . $conn->error;
                   }
@@ -155,31 +160,30 @@
               echo "Fehler: Kein Datensatz mit diesem VPN-Code gefunden.";
           }
 
-
-
-##################
-
-          ?>
-          <form method="get">
-            <label for="vpncode"><strong>Bitte gebe deinen VPN-Code ein. Merke dir diesen gut, da er für die weiteren Aufgaben wichtig ist.</strong><br>
-                Dein VPN-Code setzt sich zusammen aus insgesamt 6 Zeichen<br>
-                Die ersten beiden Buchstaben der Straße in der du wohnst. Z. B. - BA - bei Baumstraße<br>
-                Der Tag deines Geburtsdatums. Z. B. - 21 - beim 21.09.1995<br>
-                Die letzten beiden Buchstaben deines Geburtsortes: Z. B. - RG - bei Duisburg<br>
-                In diesem Beispiel wäre der VPN-Code: BA21RG<br>
-                <input type="text" id="vpncode" name="vpncode" placeholder="VPN-Code" minlength="6" maxlength="6" required>
-            </label
-            <label for="day">
-              <input type="number" id="day" placeholder="Tag" name="day" min=1 max=14 minlength="1" maxlength="2" required>
-            </label>
-            <label for="send_form">
-              <input type="submit" value="Senden" id="send_form">
-            </label>
-          </form>
-          <?php
-
         } else {
           echo "Error 1 - Weder die Interventionsseite (day) noch die Registrierungsseite (register) wurde ausgewählt.";
+          ?>
+            <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a></h4>
+            <strong><p>Bitte achte darauf, dass du vorher den Fragebogen ausgefüllt hast.</p></strong>
+            <form method="get">
+              <input type="hidden" name="register" value=1 required>
+              <label for="vpncode"><strong>Bitte gebe deinen VPN-Code ein. Merke dir diesen gut, da er für die weiteren Aufgaben wichtig ist.</strong><br>
+                  Dein VPN-Code setzt sich zusammen aus insgesamt 6 Zeichen<br>
+                  Die ersten beiden Buchstaben der Straße in der du wohnst. Z. B. - BA - bei Baumstraße<br>
+                  Der Tag deines Geburtsdatums. Z. B. - 21 - beim 21.09.1995<br>
+                  Die letzten beiden Buchstaben deines Geburtsortes: Z. B. - RG - bei Duisburg<br>
+                  In diesem Beispiel wäre der VPN-Code: BA21RG<br>
+                  <input type="text" id="vpncode" name="vpncode" placeholder="VPN-Code" minlength="6" maxlength="6" required>
+              </label>
+              <?php /*
+              <label for="day">
+                <input type="number" id="day" placeholder="Tag" name="day" min=1 max=14 minlength="1" maxlength="2" required>
+              </label> */ ?>
+              <label for="send_form">
+                <input type="submit" value="Zur Registrierung" id="send_form">
+              </label>
+            </form>
+          <?php
         }
     } else {
       echo "Error 2 - Der VPN-Code ist ungültig und/oder die Gruppenzuordnung ist ungültig";
