@@ -238,9 +238,6 @@
             </form>
           <?php
         }
-    } else {
-      echo "Error 2 - Der VPN-Code ist ungültig und/oder die Gruppenzuordnung ist ungültig";
-    }
 
 
     require './footer.inc.php';
