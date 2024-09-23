@@ -6,24 +6,31 @@
         if (isset($_GET['register']) && !isset($_GET['day'])) { # Abfrage ob Person registriert werden soll (und Ausschluss des day-GET-Parameters)
           if ($_GET['register'] == 1) {
             ?>
-            <h4 style="text-align: center">Dies ist die Anmeldung für die Intervention zur Selbstakzeptanz.</h4>
+            <h4 style="text-align: center">Dies ist die Anmeldung für die Übung zur Selbstakzeptanz.</h4>
             <h5 style="text-align: center">Bitte gebe deine E-Mail-Adresse unten ein. Du bekommst eine automatisch E-Mail zugesendet.</h5>
             <?php
             if (intval($_GET['group']) == 1) { # Interventionsgruppe
               ?>
-              <p>Du bekommst 10 Tage lang jeden Tag morgens und Abends eine kleine Aufgabe. Dies dauert nur 5 Minuten und hilft dir deine Selbstakzeptanz zu erhöhen.</p>
+              <div class="alert alert-primary" role="alert">Du bekommst 10 Tage lang jeden Tag morgens und Abends eine kleine Aufgabe. Dies dauert nur 5 Minuten und hilft dir deine Selbstakzeptanz zu erhöhen.</div>
               <?php
             } elseif (intval($_GET['group']) == 2) { # Kontrollgruppe
               ?>
-              <p>Du bekommst eine Aufgabe zur per E-Mail zugesendet. Diese hilft dir deine Selbstakzeptanz zu erhöhen.</p>
+              <div class="alert alert-primary" role="alert">Du bekommst eine Aufgabe zur per E-Mail zugesendet. Diese hilft dir deine Selbstakzeptanz zu erhöhen.</div>
               <?php
             }
             ?>
             <div class="container">
               <p>
                 Nach 10 Tagen bekommst du eine weitere E-Mail mit einem Link für den zweiten Fragebogen. <strong>Dieser zweite Fragebogen ist sehr wichtig!</strong><br>
-                Als <strong>Dankeschön</strong> kannst du, nach Abschluss der Intervention und des zweiten Fragebogens, an einer Verlosung von 3x 10 € Wunschgutscheinen teilnehmen, bekommst eine 3-monatige gratis Premium Mitgliedschaft der Meditationsapp 7mind und bekommst Zugang zu der fertigen Studie.<br>
-                Als Student der HSRW bekommst du dann auch deine 3,5 Versuchspersonenstunden gutgeschrieben.<br>
+                Als <strong>Dankeschön</strong> kannst du, nach Abschluss der Übung und des zweiten Fragebogens,
+              </p>
+                <ul>
+                  <li>an einer Verlosung von 3x 10 € Wunschgutscheinen teilnehmen, </li>
+                  <li>bekommst eine 3-monatige gratis Premium Mitgliedschaft der Meditationsapp 7mind</li>
+                  <li>und bekommst Zugang zu der fertigen Studie.</li><br>
+                  <li>Als Student der HSRW bekommst du dann auch deine 3,5 Versuchspersonenstunden gutgeschrieben.</li><br>
+                </ul>
+              <p>
                 Mit deiner Teilnahme leistest du einen großen Beitrag zur Wissenschaft und unterstützt mich sehr bei meiner Bachelorarbeit. Vielen Dank!
               </p>
               <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&group=<?php echo $_GET['group']; ?>&register=2">
@@ -154,11 +161,11 @@
                           $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
                       }
                   } else {
-                      echo "Fehler: Tag nicht gefunden.";
+                      echo '<div class="alert alert-danger" role="alert">Fehler: Tag nicht gefunden.</div>';
                       $daily_task_finished = false;
                   }
               } else {
-                  echo "Fehler beim Abrufen der JSON-Daten: " . $conn->error;
+                  echo '<div class="alert alert-danger" role="alert">Fehler beim Abrufen der JSON-Daten: ' . $conn->error.'</div>';
               }
 
 
@@ -210,7 +217,7 @@
           }
 
         } else {
-          echo '<div class="alert alert-warning" role="alert">Error 2 - Weder die Interventionsseite (day) noch die Registrierungsseite (register) wurde ausgewählt.</div>';
+          echo '<div class="alert alert-warning" role="alert">Error 2 - Weder die Übungsseite (day) noch die Registrierungsseite (register) wurde ausgewählt.</div>';
           ?>
           <div class="container">
             <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a> um die Information für die Gruppen-Nummer zu bekommen.</h4>
