@@ -182,6 +182,8 @@
               </form>
             </div>
               <?php
+            } elseif ($_GET['group'] == 2) {
+              echo '<div class="alert alert-warning" role="alert">Du bist nicht berechtigt diesen Teil der Webseite zu verwenden, da du in Gruppe 2 bist.</div>';
             } else {
               ?>
               <div class="alert alert-primary" role="alert">Du hast die Übung erfolgreich abgeschlossen! Bitte warte auf die nächste E-Mail. Sollte dies schon deine nächste E-Mail sein, warte bitte noch. Es ist erst <?php echo $interval->format('%h Stunden und %i Minuten'); ?> als du zuletzt die Übung gemachst hast.</div>
