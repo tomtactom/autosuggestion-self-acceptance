@@ -116,40 +116,46 @@
 
               ###############################
               // Hole die JSON-Daten für den aktuellen Tag aus der Datenbank
-$group = intval($_GET['group']);
-$day = intval($_GET['day']);
-$json_query = "SELECT day FROM registrations WHERE vpncode = '$vpncode' AND `group` = $group";
-$result = $conn->query($json_query);
+              $group = intval($_GET['group']);
+              $day = intval($_GET['day']);
+              $json_query = "SELECT day FROM registrations WHERE vpncode = '$vpncode' AND `group` = $group";
+              $result = $conn->query($json_query);
 
-if ($result && $row = $result->fetch_assoc()) {
-    $day_data = json_decode($row['day'], true); // JSON in ein Array umwandeln
+              if ($result && $row = $result->fetch_assoc()) {
+                  $day_data = json_decode($row['day'], true); // JSON in ein Array umwandeln
 
-    // Überprüfen, ob der aktuelle Tag existiert
-    if (isset($day_data['days'][$day - 1])) { // Tage sind 0-indiziert
-        $last_timestamp = $day_data['days'][$day - 1]['timestamp']; // Letzten Timestamp auslesen
+                  // Überprüfen, ob der aktuelle Tag existiert
+                  if (isset($day_data['days'][$day - 1])) { // Tage sind 0-indiziert
+                      $last_timestamp_string = $day_data['days'][$day - 1]['timestamp']; // Letzten Timestamp auslesen
 
-        // Überprüfen, ob der letzte Timestamp vorhanden ist
-        if ($last_timestamp) {
-            $current_time = new DateTime(); // Aktuelle Zeit
-            $last_time = new DateTime($last_timestamp); // Zeit des letzten Timestamps
-            $interval = $current_time->diff($last_time); // Zeitdifferenz berechnen
+                      // Überprüfen, ob der letzte Timestamp vorhanden ist
+                      if ($last_timestamp_string) {
+                          // Splitten des Strings und den letzten Timestamp holen
+                          $timestamps = explode(';', $last_timestamp_string);
+                          $last_timestamp = end($timestamps); // Letzten Timestamp auswählen
 
-            // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
-            if ($interval->h < 4 || ($interval->h == 4 && $interval->i > 0)) {
-                $daily_task_finished = false; // Weniger als 4 Stunden
-            } else {
-                $daily_task_finished = true; // Mehr als 4 Stunden
-            }
-        } else {
-            $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
-        }
-    } else {
-        echo "Fehler: Tag nicht gefunden.";
-        $daily_task_finished = false;
-    }
-} else {
-    echo "Fehler beim Abrufen der JSON-Daten: " . $conn->error;
-}
+                          // DateTime-Objekt erstellen
+                          $current_time = new DateTime(); // Aktuelle Zeit
+                          $last_time = new DateTime($last_timestamp); // Zeit des letzten Timestamps
+                          $interval = $current_time->diff($last_time); // Zeitdifferenz berechnen
+
+                          // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
+                          if ($interval->h < 4 || ($interval->h == 4 && $interval->i > 0)) {
+                              $daily_task_finished = false; // Weniger als 4 Stunden
+                          } else {
+                              $daily_task_finished = true; // Mehr als 4 Stunden
+                          }
+                      } else {
+                          $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
+                      }
+                  } else {
+                      echo "Fehler: Tag nicht gefunden.";
+                      $daily_task_finished = false;
+                  }
+              } else {
+                  echo "Fehler beim Abrufen der JSON-Daten: " . $conn->error;
+              }
+
 
 
 
