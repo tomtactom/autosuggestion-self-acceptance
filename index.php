@@ -116,6 +116,7 @@
 
               ###############################
               // Hole den letzten Timestamp aus der Datenbank
+              $group = intval($_GET['group']); // Hier wird die Gruppe aus den GET-Parametern geholt
               $last_timestamp_query = "SELECT timestamp FROM registrations WHERE vpncode = '$vpncode' AND `group` = $group AND day = " . intval($_GET['day']);
               $result = $conn->query($last_timestamp_query);
 
@@ -140,6 +141,7 @@
               } else {
                   echo "Fehler beim Abrufen des letzten Timestamps: " . $conn->error;
               }
+
 
               ###############################
 
