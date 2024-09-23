@@ -214,26 +214,27 @@
         } else {
           echo "Error 1 - Weder die Interventionsseite (day) noch die Registrierungsseite (register) wurde ausgewählt.";
           ?>
-            <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a></h4>
-            <strong><p>Bitte achte darauf, dass du vorher den Fragebogen ausgefüllt hast.</p></strong>
+          <div class="container">
+            <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a> um die Information für die Gruppen-Nummer zu bekommen.</h4>
+            <strong><p>Bitte achte darauf, dass du vorher den Fragebogen ausgefüllt hast und der VPN-Code der gleiche ist.</p></strong>
             <form method="get">
               <input type="hidden" name="register" value=1 required>
               <label for="vpncode"><strong>Bitte gebe deinen VPN-Code ein. Merke dir diesen gut, da er für die weiteren Aufgaben wichtig ist.</strong><br>
                   Dein VPN-Code setzt sich zusammen aus insgesamt 6 Zeichen<br>
-                  Die ersten beiden Buchstaben der Straße in der du wohnst. Z. B. - BA - bei Baumstraße<br>
-                  Der Tag deines Geburtsdatums. Z. B. - 21 - beim 21.09.1995<br>
-                  Die letzten beiden Buchstaben deines Geburtsortes: Z. B. - RG - bei Duisburg<br>
-                  In diesem Beispiel wäre der VPN-Code: BA21RG<br>
+                  Die ersten beiden Buchstaben der Straße in der du wohnst. Z. B. - <strong>BA</strong> - bei Baumstraße<br>
+                  Der Tag deines Geburtsdatums. Z. B. - <strong>21</strong> - beim 21.09.1995<br>
+                  Die letzten beiden Buchstaben deines Geburtsortes: Z. B. - <strong>RG</strong> - bei Duisburg<br>
+                  In diesem Beispiel wäre der VPN-Code: <strong>BA21RG</strong><br>
                   <input type="text" id="vpncode" name="vpncode" placeholder="VPN-Code" minlength="6" maxlength="6" required>
               </label>
-              <?php /*
-              <label for="day">
-                <input type="number" id="day" placeholder="Tag" name="day" min=1 max=14 minlength="1" maxlength="2" required>
-              </label> */ ?>
+              <label for="group">Bitte wende dich für die Gruppen-Nummer an die <a href="mailto:tom-john.aschmann@hsrw.org">Versuchsleitung</a>.
+                <input type="number" id="group" placeholder="Gruppen-Nummer" name="day" min=1 max=2 minlength="1" maxlength="1" required>
+              </label>
               <label for="send_form">
                 <input type="submit" value="Zur Registrierung" id="send_form">
               </label>
             </form>
+          </div>
           <?php
         }
 } else {
