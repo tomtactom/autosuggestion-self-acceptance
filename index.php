@@ -119,7 +119,7 @@
 
               // Formular erstellen
               ?>
-              <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>">
+              <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>&group=<?php echo $_GET['group']; ?>">
                   <input type="hidden" name="vpncode" value="<?php echo $_GET['vpncode']; ?>">
                   <input type="hidden" name="day" value="<?php echo $_GET['day']; ?>">
                   <input type="submit" value="Aufgabe abschließen">
