@@ -140,7 +140,8 @@
                           $interval = $current_time->diff($last_time); // Zeitdifferenz berechnen
 
                           // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
-                          if ($interval->h < 4 || ($interval->h == 4 && $interval->i > 0)) {
+                          $hours_difference = ($interval->days * 24) + $interval->h; // Gesamtstunden berechnen
+                          if ($hours_difference < 4) {
                               $daily_task_finished = true; // Weniger als 4 Stunden
                           } else {
                               $daily_task_finished = false; // Mehr als 4 Stunden
@@ -148,6 +149,7 @@
                       } else {
                           $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
                       }
+
                   } else {
                       echo "Fehler: Tag nicht gefunden.";
                       $daily_task_finished = false;
