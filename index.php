@@ -179,7 +179,7 @@
               <?php
             } else {
               ?>
-              <p>Du hast die Übung erfolgreich abgeschlossen! Bitte warte auf die nächste E-Mail. Sollte dies schon deine nächste E-Mail sein, warte bitte noch <?php echo $interval->format('%h Stunden und %i Minuten'); ?></p>
+              <p>Du hast die Übung erfolgreich abgeschlossen! Bitte warte auf die nächste E-Mail. Sollte dies schon deine nächste E-Mail sein, warte bitte noch. Es ist erst <?php echo $interval->format('%h Stunden und %i Minuten'); ?> als du zuletzt die Übung gemachst hast.</p>
               <?php
             }
               // Prüfen, ob das Formular abgesendet wurde
