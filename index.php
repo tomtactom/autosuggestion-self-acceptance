@@ -2,6 +2,7 @@
     require './header.inc.php'; # Header Datei, in welcher beginnende Inhalte gespeichert sind, die auf jeder Seite anfangs eingebunden werden
     require './send_email.inc.php';
     if (isset($_GET['vpncode']) && strlen($_GET['vpncode']) == 6 && is_numeric($_GET['group']) && (intval($_GET['group']) == 1 || intval($_GET['group']) == 2)) { # Abfrage der immer benötigten GET-Parameter
+// Registrierung
         if (isset($_GET['register']) && !isset($_GET['day'])) { # Abfrage ob Person registriert werden soll (und Ausschluss des day-GET-Parameters)
           if ($_GET['register'] == 1) {
             ?>
@@ -79,8 +80,84 @@
           } else {
             echo "Error 3 - Ungültiger register Parameter";
           }
-
+// Intervention
         } elseif (isset($_GET['day']) && is_numeric($_GET['day']) && intval($_GET['day']) >= 1 && intval($_GET['day']) <= 14 && !isset($_GET['register'])) { # Abfrage ob day-GET-Parameter gesetzt ist (und Ausschluss des register-GET-Parameters)
+
+          /*
+            BITTE HIER EINFÜGEN
+          */
+          // Überprüfen, ob der VPN-Code in der Datenbank existiert
+          $vpncode = $conn->real_escape_string($_GET['vpncode']);
+          $day_input = intval($_GET['day']);
+
+          // SQL-Abfrage, um den Eintrag mit dem gegebenen VPN-Code zu überprüfen
+          $sql = "SELECT day FROM registrations WHERE vpncode = '$vpncode'";
+          $result = $conn->query($sql);
+
+          if ($result->num_rows > 0) {
+              // Datensatz gefunden, day-Parameter aus der Datenbank auslesen
+              $row = $result->fetch_assoc();
+              $day_data = $row['day'] ? json_decode($row['day'], true) : null;
+
+              // Überprüfen, ob day-Daten leer oder null sind
+              if (is_null($day_data)) {
+                  // JSON-Liste erstellen, falls day leer ist
+                  $day_data = [
+                      "days" => array_map(function ($d) {
+                          return ["day" => $d, "finished" => 0, "timestamp" => ""];
+                      }, range(1, 14))
+                  ];
+
+                  // Day als JSON in die Datenbank speichern
+                  $day_json = $conn->real_escape_string(json_encode($day_data));
+                  $update_sql = "UPDATE registrations SET day = '$day_json' WHERE vpncode = '$vpncode'";
+                  $conn->query($update_sql);
+              }
+
+              // Satz anzeigen
+              echo "<p>Ich akzeptiere mich so wie ich bin.</p>";
+
+              // Formular erstellen
+              ?>
+              <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>">
+                  <input type="hidden" name="vpncode" value="<?php echo $_GET['vpncode']; ?>">
+                  <input type="hidden" name="day" value="<?php echo $_GET['day']; ?>">
+                  <input type="submit" value="Aufgabe abschließen">
+              </form>
+              <?php
+
+              // Prüfen, ob das Formular abgesendet wurde
+              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                  // JSON-Daten erneut laden, falls sie aktualisiert wurden
+                  $day_data = json_decode($row['day'], true);
+
+                  // Den aktuellen Tag finden und aktualisieren
+                  foreach ($day_data['days'] as &$day_item) {
+                      if ($day_item['day'] == $day_input) {
+                          $day_item['finished'] += 1; // Anzahl der abgeschlossenen Aufgaben erhöhen
+                          $day_item['timestamp'] .= (empty($day_item['timestamp']) ? "" : ";") . date("Y-m-d H:i:s"); // Timestamp hinzufügen
+                          break;
+                      }
+                  }
+
+                  // Aktualisierte JSON-Liste zurück in die Datenbank speichern
+                  $day_json = $conn->real_escape_string(json_encode($day_data));
+                  $update_sql = "UPDATE registrations SET day = '$day_json' WHERE vpncode = '$vpncode'";
+
+                  if ($conn->query($update_sql) === TRUE) {
+                      echo "<p>Deine Aufgabe wurde erfolgreich abgeschlossen!</p>";
+                  } else {
+                      echo "Fehler beim Aktualisieren der Daten: " . $conn->error;
+                  }
+              }
+
+          } else {
+              echo "Fehler: Kein Datensatz mit diesem VPN-Code gefunden.";
+          }
+
+
+
+##################
 
           ?>
           <form method="get">

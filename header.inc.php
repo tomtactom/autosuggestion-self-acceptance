@@ -13,7 +13,7 @@ $conn = new mysqli($servername, $username, $password);
 
 // Überprüfen, ob die Verbindung erfolgreich war
 if ($conn->connect_error) {
-    die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+    die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
 }
 
 // Überprüfen, ob die Datenbank existiert
@@ -63,40 +63,10 @@ if ($table_check !== false && $table_check->num_rows == 0) {
 
       <!-- CSS-Dateien -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <link rel="stylesheet" href="path/to/your-stylesheet.css">
-
-      <style>
-          /* Basis Reset */
-          html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-          }
-
-          /* Wrapper für Flexbox Layout */
-          body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-          }
-
-          /* Hauptinhalt soll sich ausdehnen */
-          main {
-            flex: 1;
-            padding: 5rem;
-          }
-
-          /* Footer-Styling */
-          footer {
-            background-color: #f8f9fa;
-            padding: 1rem;
-            text-align: center;
-            border-top: 1px solid #dee2e6;
-          }
-      </style
+      <link rel="stylesheet" href="./assets/stylesheet.css">
 
       <!-- JavaScript-Dateien -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
