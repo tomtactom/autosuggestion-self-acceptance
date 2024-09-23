@@ -140,9 +140,9 @@
                           $interval = $current_time->diff($last_time); // Zeitdifferenz berechnen
 
                           // Debugging-Ausgaben
-                          echo "Aktuelle Zeit: " . $current_time->format('Y-m-d H:i:s') . "<br>";
-                          echo "Letzter Timestamp: " . $last_timestamp . "<br>";
-                          echo "Zeitdifferenz: " . $interval->format('%d Tage %h Stunden %i Minuten') . "<br>";
+                          #echo "Aktuelle Zeit: " . $current_time->format('Y-m-d H:i:s') . "<br>";
+                          #echo "Letzter Timestamp: " . $last_timestamp . "<br>";
+                          #echo "Zeitdifferenz: " . $interval->format('%d Tage %h Stunden %i Minuten') . "<br>";
 
                           // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
                           $hours_difference = ($interval->days * 24) + $interval->h; // Gesamtstunden berechnen
@@ -163,13 +163,7 @@
               } else {
                   echo "Fehler beim Abrufen der JSON-Daten: " . $conn->error;
               }
-##############################
 
-              var_dump($daily_task_finished);
-
-
-
-              ###############################
 
               if ($daily_task_finished == false) {
               // Satz anzeigen
@@ -185,7 +179,7 @@
               <?php
             } else {
               ?>
-              <p>Du hast die Übung erfolgreich abgeschlossen!</p>
+              <p>Du hast die Übung erfolgreich abgeschlossen! Bitte warte auf die nächste E-Mail. Sollte dies schon deine nächste E-Mail sein, warte bitte noch <?php echo $interval->format('%d Tage %h Stunden %i Minuten'); ?></p>
               <?php
             }
               // Prüfen, ob das Formular abgesendet wurde
