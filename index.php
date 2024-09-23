@@ -141,9 +141,9 @@
 
                           // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
                           if ($interval->h < 4 || ($interval->h == 4 && $interval->i > 0)) {
-                              $daily_task_finished = false; // Weniger als 4 Stunden
+                              $daily_task_finished = true; // Weniger als 4 Stunden
                           } else {
-                              $daily_task_finished = true; // Mehr als 4 Stunden
+                              $daily_task_finished = false; // Mehr als 4 Stunden
                           }
                       } else {
                           $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
