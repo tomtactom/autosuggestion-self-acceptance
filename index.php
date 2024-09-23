@@ -167,19 +167,20 @@
 
               if ($daily_task_finished == false) {
               // Satz anzeigen
-              echo "<p>Ich akzeptiere mich so wie ich bin.</p>";
-
               // Formular erstellen
               ?>
+              <div class="container">
+              <h1 style="text-align: center">Ich akzeptiere mich so wie ich bin</h1>
               <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>&group=<?php echo $_GET['group']; ?>">
                   <input type="hidden" name="vpncode" value="<?php echo $_GET['vpncode']; ?>">
                   <input type="hidden" name="day" value="<?php echo $_GET['day']; ?>">
                   <input type="submit" name="daily_task" value="Aufgabe abschließen">
               </form>
+            </div>
               <?php
             } else {
               ?>
-              <p>Du hast die Übung erfolgreich abgeschlossen! Bitte warte auf die nächste E-Mail. Sollte dies schon deine nächste E-Mail sein, warte bitte noch. Es ist erst <?php echo $interval->format('%h Stunden und %i Minuten'); ?> als du zuletzt die Übung gemachst hast.</p>
+              <div class="alert alert-primary" role="alert">Du hast die Übung erfolgreich abgeschlossen! Bitte warte auf die nächste E-Mail. Sollte dies schon deine nächste E-Mail sein, warte bitte noch. Es ist erst <?php echo $interval->format('%h Stunden und %i Minuten'); ?> als du zuletzt die Übung gemachst hast.</div>
               <?php
             }
               // Prüfen, ob das Formular abgesendet wurde
@@ -203,16 +204,16 @@
                   if ($conn->query($update_sql) === TRUE) {
                       $daily_task_finished = true;
                   } else {
-                      echo "Fehler beim Aktualisieren der Daten: " . $conn->error;
+                      echo '<div class="alert alert-danger" role="alert">Fehler beim Aktualisieren der Daten: ' . $conn->error.'</div>';
                   }
               }
 
           } else {
-              echo "Fehler: Kein Datensatz mit diesem VPN-Code gefunden.";
+              echo '<div class="alert alert-danger" role="alert">Error 1 - Kein Datensatz mit diesem VPN-Code gefunden.</div>';
           }
 
         } else {
-          echo "Error 1 - Weder die Interventionsseite (day) noch die Registrierungsseite (register) wurde ausgewählt.";
+          echo '<div class="alert alert-warning" role="alert">Error 2 - Weder die Interventionsseite (day) noch die Registrierungsseite (register) wurde ausgewählt.</div>';
           ?>
           <div class="container">
             <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a> um die Information für die Gruppen-Nummer zu bekommen.</h4>
@@ -238,7 +239,7 @@
           <?php
         }
 } else {
-  echo "Error 2 - Die Eingaben sind ungültig. Bitte stelle sicher, dass der VPN-Code genau 6 Zeichen lang ist und dass die Gruppe entweder 1 oder 2 ist. Überprüfe auch, ob alle erforderlichen Parameter korrekt angegeben sind.";
+  echo '<div class="alert alert-danger" role="alert">Error 3 - Die Eingaben sind ungültig. Bitte stelle sicher, dass der VPN-Code genau 6 Zeichen lang ist und dass die Gruppe entweder 1 oder 2 ist. Überprüfe auch, ob alle erforderlichen Parameter korrekt angegeben sind.</div>';
 
 }
 
