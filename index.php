@@ -155,7 +155,7 @@
               } else {
                   echo "Fehler beim Abrufen der JSON-Daten: " . $conn->error;
               }
-
+              var_dump($daily_task_finished);
 
 
 
