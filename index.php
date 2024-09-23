@@ -146,7 +146,7 @@
 
                           // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
                           $hours_difference = ($interval->days * 24) + $interval->h; // Gesamtstunden berechnen
-                          echo "Gesamtstunden Differenz: " . $hours_difference . "<br>";
+                          #echo "Gesamtstunden Differenz: " . $hours_difference . "<br>";
 
                           if ($hours_difference < 4) {
                               $daily_task_finished = true; // Weniger als 4 Stunden
@@ -179,7 +179,7 @@
               <?php
             } else {
               ?>
-              <p>Du hast die Übung erfolgreich abgeschlossen! Bitte warte auf die nächste E-Mail. Sollte dies schon deine nächste E-Mail sein, warte bitte noch <?php echo $interval->format('%d Tage %h Stunden %i Minuten'); ?></p>
+              <p>Du hast die Übung erfolgreich abgeschlossen! Bitte warte auf die nächste E-Mail. Sollte dies schon deine nächste E-Mail sein, warte bitte noch <?php echo $interval->format('%h Stunden und %i Minuten'); ?></p>
               <?php
             }
               // Prüfen, ob das Formular abgesendet wurde
