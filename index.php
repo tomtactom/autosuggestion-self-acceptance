@@ -70,7 +70,7 @@
                           if ($conn->query($sql) === TRUE) {
                               // E-Mail versenden
                               if (sendEmail($email, $group)) {
-                                  echo "<p class='container'>Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. <strong>Bitte lese dir die E-Mail gut durch.</strong> Solltest du keine E-Mail erhalten haben schreibe mir bitte über die E-Mail-Adresse <a href='mailto:tom-john.aschmann@hsrw.org'>tom-john.aschmann@hsrw.org</a>.<br>Du kannst diese Seite nun schließen 🙂.</p>";
+                                  echo "<p class='container'>Vielen Dank für deine Registrierung. Du hast soeben eine E-Mail erhalten in welcher beschrieben wird wie die Übungen über die 10 Tage ablaufen. <strong>Bitte lese dir die E-Mail gut durch.</strong> Solltest du keine E-Mail erhalten haben schreibe mir bitte über die E-Mail-Adresse <a href='mailto:".$privateData['email']."'>".$privateData['email']."</a>.<br>Du kannst diese Seite nun schließen 🙂.</p>";
                               } else {
                                   echo '<div class="alert alert-danger" role="alert">Fehler beim Versenden der E-Mail.</div>';
                               }
@@ -235,7 +235,7 @@
   echo '<div class="alert alert-danger" role="alert">Error 3 - Die Eingaben sind ungültig. Bitte stelle sicher, dass der VPN-Code genau 6 Zeichen lang ist und dass die Gruppe entweder 1 oder 2 ist. Überprüfe auch, ob alle erforderlichen Parameter korrekt angegeben sind.</div>';
   ?>
   <div class="container">
-    <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a> um die Information für die Gruppen-Nummer zu bekommen.</h4>
+    <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:<?php echo $privateData['email']; ?>"><?php echo $privateData['email']; ?></a> um die Information für die Gruppen-Nummer zu bekommen.</h4>
     <strong><p>Bitte achte darauf, dass du vorher den Fragebogen ausgefüllt hast und der VPN-Code der gleiche ist.</p></strong>
     <form method="get">
       <input type="hidden" name="register" value=1 required>
@@ -247,7 +247,7 @@
           In diesem Beispiel wäre der VPN-Code: <strong>BA21RG</strong><br>
           <input type="text" id="vpncode" name="vpncode" placeholder="VPN-Code" minlength="6" maxlength="6" required>
       </label><br>
-      <label for="group">Bitte wende dich für die Gruppen-Nummer an die <a href="mailto:tom-john.aschmann@hsrw.org">Versuchsleitung</a>.<br>
+      <label for="group">Bitte wende dich für die Gruppen-Nummer an die <a href="mailto:<?php echo $privateData['email']; ?>">Versuchsleitung</a>.<br>
         <input type="number" id="group" placeholder="Gruppen-Nummer" name="group" min=1 max=2 minlength="1" maxlength="1" required style="min-width: 200px;">
       </label><br>
       <label for="send_form">
