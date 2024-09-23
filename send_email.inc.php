@@ -67,7 +67,7 @@ function sendEmail($email, $group) {
 
     // E-Mail Header
     $headers = "From: " . $privateData['server_email'] . "\r\n" .
-           "Reply-To: " . $privateData['server_email'] . "\r\n" .
+           "Reply-To: tom-john.aschmann@hsrw.org\r\n" . // Antwort an die spezifische E-Mail-Adresse
            "Content-Type: text/html; charset=UTF-8\r\n" . // HTML-Header
            "X-Mailer: PHP/" . phpversion();
 
