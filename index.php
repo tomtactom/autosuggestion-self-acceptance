@@ -124,31 +124,35 @@
               if ($result && $row = $result->fetch_assoc()) {
                   $day_data = json_decode($row['day'], true); // JSON in ein Array umwandeln
 
-                  // Überprüfen, ob der aktuelle Tag existiert
-                  if (isset($day_data['days'][$day - 1])) { // Tage sind 0-indiziert
-                      $last_timestamp_string = $day_data['days'][$day - 1]['timestamp']; // Letzten Timestamp auslesen
+                  // Überprüfen, ob der letzte Timestamp vorhanden ist
+                  if ($last_timestamp_string) {
+                      // Splitten des Strings und den letzten Timestamp holen
+                      $timestamps = explode(';', $last_timestamp_string);
+                      $last_timestamp = end($timestamps); // Letzten Timestamp auswählen
 
-                      // Überprüfen, ob der letzte Timestamp vorhanden ist
-                      if ($last_timestamp_string) {
-                          // Splitten des Strings und den letzten Timestamp holen
-                          $timestamps = explode(';', $last_timestamp_string);
-                          $last_timestamp = end($timestamps); // Letzten Timestamp auswählen
+                      // DateTime-Objekt erstellen
+                      $current_time = new DateTime(); // Aktuelle Zeit
+                      $last_time = new DateTime($last_timestamp); // Zeit des letzten Timestamps
+                      $interval = $current_time->diff($last_time); // Zeitdifferenz berechnen
 
-                          // DateTime-Objekt erstellen
-                          $current_time = new DateTime(); // Aktuelle Zeit
-                          $last_time = new DateTime($last_timestamp); // Zeit des letzten Timestamps
-                          $interval = $current_time->diff($last_time); // Zeitdifferenz berechnen
+                      // Debugging-Ausgaben
+                      echo "Aktuelle Zeit: " . $current_time->format('Y-m-d H:i:s') . "<br>";
+                      echo "Letzter Timestamp: " . $last_timestamp . "<br>";
+                      echo "Zeitdifferenz: " . $interval->format('%d Tage %h Stunden %i Minuten') . "<br>";
 
-                          // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
-                          $hours_difference = ($interval->days * 24) + $interval->h; // Gesamtstunden berechnen
-                          if ($hours_difference < 4) {
-                              $daily_task_finished = true; // Weniger als 4 Stunden
-                          } else {
-                              $daily_task_finished = false; // Mehr als 4 Stunden
-                          }
+                      // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
+                      $hours_difference = ($interval->days * 24) + $interval->h; // Gesamtstunden berechnen
+                      echo "Gesamtstunden Differenz: " . $hours_difference . "<br>";
+
+                      if ($hours_difference < 4) {
+                          $daily_task_finished = true; // Weniger als 4 Stunden
                       } else {
-                          $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
+                          $daily_task_finished = false; // Mehr als 4 Stunden
                       }
+                  } else {
+                      $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
+                  }
+
 
                   } else {
                       echo "Fehler: Tag nicht gefunden.";
