@@ -191,6 +191,12 @@
             }
               // Prüfen, ob das Formular abgesendet wurde
               if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['daily_task'])) {
+                    // Nach erfolgreicher Verarbeitung der Formulardaten:
+                    // Redirect zur selben Seite mit GET-Anfrage, um ein erneutes Absenden zu verhindern
+                    $vpncode = $_GET['vpncode'];
+                    $day = $_GET['day'];
+                    $group = $_GET['group'];
+
                   // JSON-Daten erneut laden, falls sie aktualisiert wurden
                   $day_data = json_decode($row['day'], true);
 
@@ -212,6 +218,10 @@
                   } else {
                       echo '<div class="alert alert-danger" role="alert">Fehler beim Aktualisieren der Daten: ' . $conn->error.'</div>';
                   }
+
+                  // Verhindere mehrfaches Absenden, indem die Seite neu geladen wird
+                  header("Location: ?vpncode=$vpncode&day=$day&group=$group");
+                  exit;
               }
 
           } else {
