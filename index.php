@@ -125,7 +125,6 @@
                   $day_data = json_decode($row['day'], true); // JSON in ein Array umwandeln
 
                   // Überprüfen, ob der letzte Timestamp vorhanden ist
-                  if ($last_timestamp_string) {
                       // Splitten des Strings und den letzten Timestamp holen
                       $timestamps = explode(';', $last_timestamp_string);
                       $last_timestamp = end($timestamps); // Letzten Timestamp auswählen
@@ -149,9 +148,6 @@
                       } else {
                           $daily_task_finished = false; // Mehr als 4 Stunden
                       }
-                  } else {
-                      $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
-                  }
 
 
                   } else {
