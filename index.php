@@ -242,6 +242,6 @@
             </form>
           <?php
         }
-
+}
 
     require './footer.inc.php';
