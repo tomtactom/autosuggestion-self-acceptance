@@ -220,33 +220,32 @@
 
         } else {
           echo '<div class="alert alert-warning" role="alert">Error 2 - Weder die Übungsseite (day) noch die Registrierungsseite (register) wurde ausgewählt.</div>';
-          ?>
-          <div class="container">
-            <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a> um die Information für die Gruppen-Nummer zu bekommen.</h4>
-            <strong><p>Bitte achte darauf, dass du vorher den Fragebogen ausgefüllt hast und der VPN-Code der gleiche ist.</p></strong>
-            <form method="get">
-              <input type="hidden" name="register" value=1 required>
-              <label for="vpncode"><strong>Bitte gebe deinen VPN-Code ein. Merke dir diesen gut, da er für die weiteren Aufgaben wichtig ist.</strong><br>
-                  Dein VPN-Code setzt sich zusammen aus insgesamt 6 Zeichen<br>
-                  Die ersten beiden Buchstaben der Straße in der du wohnst. Z. B. - <strong>BA</strong> - bei Baumstraße<br>
-                  Der Tag deines Geburtsdatums. Z. B. - <strong>21</strong> - beim 21.09.1995<br>
-                  Die letzten beiden Buchstaben deines Geburtsortes: Z. B. - <strong>RG</strong> - bei Duisburg<br>
-                  In diesem Beispiel wäre der VPN-Code: <strong>BA21RG</strong><br>
-                  <input type="text" id="vpncode" name="vpncode" placeholder="VPN-Code" minlength="6" maxlength="6" required>
-              </label><br>
-              <label for="group">Bitte wende dich für die Gruppen-Nummer an die <a href="mailto:tom-john.aschmann@hsrw.org">Versuchsleitung</a>.<br>
-                <input type="number" id="group" placeholder="Gruppen-Nummer" name="group" min=1 max=2 minlength="1" maxlength="1" required style="min-width: 200px;">
-              </label><br>
-              <label for="send_form">
-                <input type="submit" value="Zur Registrierung" id="send_form">
-              </label>
-            </form>
-          </div>
-          <?php
         }
 } else {
   echo '<div class="alert alert-danger" role="alert">Error 3 - Die Eingaben sind ungültig. Bitte stelle sicher, dass der VPN-Code genau 6 Zeichen lang ist und dass die Gruppe entweder 1 oder 2 ist. Überprüfe auch, ob alle erforderlichen Parameter korrekt angegeben sind.</div>';
-
+  ?>
+  <div class="container">
+    <h4>Bitte wende dich per E-Mail an die Versuchsleitung: <a href="mailto:tom-john.aschmann@hsrw.org">tom-john.aschmann@hsrw.org</a> um die Information für die Gruppen-Nummer zu bekommen.</h4>
+    <strong><p>Bitte achte darauf, dass du vorher den Fragebogen ausgefüllt hast und der VPN-Code der gleiche ist.</p></strong>
+    <form method="get">
+      <input type="hidden" name="register" value=1 required>
+      <label for="vpncode"><strong>Bitte gebe deinen VPN-Code ein. Merke dir diesen gut, da er für die weiteren Aufgaben wichtig ist.</strong><br>
+          Dein VPN-Code setzt sich zusammen aus insgesamt 6 Zeichen<br>
+          Die ersten beiden Buchstaben der Straße in der du wohnst. Z. B. - <strong>BA</strong> - bei Baumstraße<br>
+          Der Tag deines Geburtsdatums. Z. B. - <strong>21</strong> - beim 21.09.1995<br>
+          Die letzten beiden Buchstaben deines Geburtsortes: Z. B. - <strong>RG</strong> - bei Duisburg<br>
+          In diesem Beispiel wäre der VPN-Code: <strong>BA21RG</strong><br>
+          <input type="text" id="vpncode" name="vpncode" placeholder="VPN-Code" minlength="6" maxlength="6" required>
+      </label><br>
+      <label for="group">Bitte wende dich für die Gruppen-Nummer an die <a href="mailto:tom-john.aschmann@hsrw.org">Versuchsleitung</a>.<br>
+        <input type="number" id="group" placeholder="Gruppen-Nummer" name="group" min=1 max=2 minlength="1" maxlength="1" required style="min-width: 200px;">
+      </label><br>
+      <label for="send_form">
+        <input type="submit" value="Zur Registrierung" id="send_form">
+      </label>
+    </form>
+  </div>
+  <?php
 }
 
     require './footer.inc.php';
