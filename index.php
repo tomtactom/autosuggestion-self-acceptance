@@ -236,6 +236,9 @@
             </form>
           <?php
         }
+} else {
+  echo "Error 2 - Die Eingaben sind ungültig. Bitte stelle sicher, dass der VPN-Code genau 6 Zeichen lang ist und dass die Gruppe entweder 1 oder 2 ist. Überprüfe auch, ob alle erforderlichen Parameter korrekt angegeben sind.";
+
 }
 
     require './footer.inc.php';
