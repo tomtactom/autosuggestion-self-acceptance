@@ -227,10 +227,10 @@
                   Die letzten beiden Buchstaben deines Geburtsortes: Z. B. - <strong>RG</strong> - bei Duisburg<br>
                   In diesem Beispiel wäre der VPN-Code: <strong>BA21RG</strong><br>
                   <input type="text" id="vpncode" name="vpncode" placeholder="VPN-Code" minlength="6" maxlength="6" required>
-              </label>
-              <label for="group">Bitte wende dich für die Gruppen-Nummer an die <a href="mailto:tom-john.aschmann@hsrw.org">Versuchsleitung</a>.
+              </label><br>
+              <label for="group">Bitte wende dich für die Gruppen-Nummer an die <a href="mailto:tom-john.aschmann@hsrw.org">Versuchsleitung</a>.<br>
                 <input type="number" id="group" placeholder="Gruppen-Nummer" name="day" min=1 max=2 minlength="1" maxlength="1" required>
-              </label>
+              </label><br>
               <label for="send_form">
                 <input type="submit" value="Zur Registrierung" id="send_form">
               </label>
