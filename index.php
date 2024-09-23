@@ -229,7 +229,7 @@
                   <input type="text" id="vpncode" name="vpncode" placeholder="VPN-Code" minlength="6" maxlength="6" required>
               </label><br>
               <label for="group">Bitte wende dich für die Gruppen-Nummer an die <a href="mailto:tom-john.aschmann@hsrw.org">Versuchsleitung</a>.<br>
-                <input type="number" id="group" placeholder="Gruppen-Nummer" name="day" min=1 max=2 minlength="1" maxlength="1" required style="min-width: 200px;">
+                <input type="number" id="group" placeholder="Gruppen-Nummer" name="group" min=1 max=2 minlength="1" maxlength="1" required style="min-width: 200px;">
               </label><br>
               <label for="send_form">
                 <input type="submit" value="Zur Registrierung" id="send_form">
