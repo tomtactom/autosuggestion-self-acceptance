@@ -114,7 +114,36 @@
                   $conn->query($update_sql);
               }
 
-              if (!isset($daily_task_finished) || $daily_task_finished == false) {
+              ###############################
+              // Hole den letzten Timestamp aus der Datenbank
+              $last_timestamp_query = "SELECT timestamp FROM registrations WHERE vpncode = '$vpncode' AND `group` = $group AND day = " . intval($_GET['day']);
+              $result = $conn->query($last_timestamp_query);
+
+              if ($result && $row = $result->fetch_assoc()) {
+                  $last_timestamp = $row['timestamp'];
+
+                  // Überprüfen, ob der letzte Timestamp vorhanden ist
+                  if ($last_timestamp) {
+                      $current_time = new DateTime(); // Aktuelle Zeit
+                      $last_time = new DateTime($last_timestamp); // Zeit des letzten Timestamps
+                      $interval = $current_time->diff($last_time); // Zeitdifferenz berechnen
+
+                      // Überprüfen, ob die Zeitdifferenz weniger als 4 Stunden beträgt
+                      if ($interval->h < 4 || ($interval->h == 4 && $interval->i > 0)) {
+                          $daily_task_finished = false; // Weniger als 4 Stunden
+                      } else {
+                          $daily_task_finished = true; // Mehr als 4 Stunden
+                      }
+                  } else {
+                      $daily_task_finished = false; // Falls kein Timestamp vorhanden ist
+                  }
+              } else {
+                  echo "Fehler beim Abrufen des letzten Timestamps: " . $conn->error;
+              }
+
+              ###############################
+
+              if ($daily_task_finished == false) {
               // Satz anzeigen
               echo "<p>Ich akzeptiere mich so wie ich bin.</p>";
 
