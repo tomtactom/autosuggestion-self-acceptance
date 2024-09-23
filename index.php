@@ -114,7 +114,7 @@
                   $conn->query($update_sql);
               }
 
-              if ($daily_task_finished == false) {
+              if (!isset($daily_task_finished) || $daily_task_finished == false) {
               // Satz anzeigen
               echo "<p>Ich akzeptiere mich so wie ich bin.</p>";
 
