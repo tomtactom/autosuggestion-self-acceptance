@@ -192,6 +192,19 @@
                           </div>
                       </div>
                   </div><br>
+                  <script>
+    // Warte 30 Sekunden (30000 Millisekunden)
+    setTimeout(function() {
+        var accordionCollapse = document.getElementById('collapseOne');
+        if (accordionCollapse.classList.contains('show')) {
+            // Klappe das Accordion ein, wenn es geöffnet ist
+            var bsCollapse = new bootstrap.Collapse(accordionCollapse, {
+                toggle: false  // toggle: false bedeutet, dass das Accordion nicht geöffnet wird
+            });
+            bsCollapse.hide();  // Versteckt das Accordion
+        }
+    }, 30000); // 30 Sekunden
+</script>
 
                   <h1 style="text-align: center">Ich akzeptiere mich so wie ich bin</h1>
 
