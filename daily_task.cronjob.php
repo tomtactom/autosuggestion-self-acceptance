@@ -1,9 +1,5 @@
 <?php
-if ($_GET['daytime'] == "morning") {
-    // Morgen-spezifische Logik hier
-} elseif ($_GET['daytime'] == "evening") {
-    // Abend-spezifische Logik hier
-} else {
+if ($_GET['passkey'] != "Fq1X1uozDYZt6ycq8dMjts8jF4ZK9F7M") {
     http_response_code(422); // 422 Unprocessable Entity
     exit;
 }
@@ -17,7 +13,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // E-Mail-Header
-  $subject = "Ihr VPN-Code für die Selbstakzeptanz-Übung";
+  $subject = "Deine heutige Selbstakzeptanz-Übung";
   $headers = "From: " . $privateData['server_email'] . "\r\n" .
              "Reply-To: " . $privateData['email'] . "\r\n" .
              "Content-Type: text/html; charset=UTF-8\r\n" .
@@ -36,28 +32,24 @@ if ($result->num_rows > 0) {
       $time_of_day = ($email_count % 2 === 0) ? "morgen" : "abend";
 
       // E-Mail-Inhalt
-      $message = "
-      <html>
-      <head>
-          <title>Ihr VPN-Code für die Selbstakzeptanz-Übung</title>
-      </head>
-      <body>
-          <p>Liebe*r Teilnehmende*r,</p>
-          <p>wir freuen uns, Ihnen Ihren VPN-Code für die Selbstakzeptanz-Übung zur Verfügung zu stellen. Dieser Code ist ein wichtiger Bestandteil unserer Intervention und wird Ihnen helfen, Ihre Fortschritte zu verfolgen.</p>
-          <p><strong>Ihr VPN-Code:</strong> $vpncode</p>
-          <p>Bitte verwenden Sie den folgenden Link, um auf die Übung zuzugreifen:</p>
-          <p><a href='https://selbstakzeptanz.tomaschmann.de?vpncode=$vpncode&group=1&day=$day'>Selbstakzeptanz-Übung</a></p>
-          <p>Wichtige Hinweise:</p>
-          <ul>
-              <li>Der Link bleibt bis zum Ende Ihrer Teilnahme aktiv.</li>
-              <li>Bitte stellen Sie sicher, dass Sie den Link nur einmal verwenden, um Ihre Daten korrekt zu erfassen.</li>
-          </ul>
-          <p>Vielen Dank für Ihre Teilnahme an unserer Studie. Ihre Mitarbeit ist von großer Bedeutung für die Forschung im Bereich Selbstakzeptanz.</p>
-          <p>Bei Fragen oder weiteren Informationen stehen wir Ihnen gerne zur Verfügung.</p>
-          <p>Mit freundlichen Grüßen,<br>Das Team von [Ihr Team-Name oder Projektname]<br>[Kontaktinformationen]</p>
-      </body>
-      </html>
-      ";
+      $message = "<p>Liebe:r Teilnehmer:in,</p>
+
+      <p>herzlich willkommen zu deiner täglichen Übung! Vielen Dank, dass du dir die Zeit nimmst.<br>
+      Du bekommst 10 Tage lang jeden Morgen und Abend eine E-Mail. Anschließend bekommst du einen zweiten Fragebogen.</p>
+
+      <p>Dies ist die Übung für den <strong>$time_of_day</strong> des <strong>$day.</strong> Tages.</p>
+
+      <p>Übung für heute: <a href='https://selbstakzeptanz.tomaschmann.de?vpncode=$vpncode&group=1&day=$day'>Hier klicken, um zur Übung zu gelangen</a>.</p>
+
+      <small>Falls du den Link nicht anklicken kannst, kannst du ihn hier kopieren: <strong><a href='https://selbstakzeptanz.tomaschmann.de?vpncode=$vpncode&group=1&day=$day'>https://selbstakzeptanz.tomaschmann.de?vpncode=$vpncode&group=1&day=$day</a></strong></small>
+
+      <p>Nimm dir bitte ein paar Minuten, um die Übung zu absolvieren. Es ist hilfreich, diese so bald wie möglich nach Erhalt dieser E-Mail zu machen, aber bitte nicht auf den nächsten Tag verschieben. Die Übung dauert nur etwa 5 Minuten. Dabei wirst du 5 Minuten lang einen Satz im Kopf immer wieder durchgehen.</p>
+      <p>Solltest du eine Übung verpasst haben, mache einfach mit der nächsten weiter.</p>
+      <p>Indem du regelmäßig an dieser Übung teilnimmst, unterstützt du nicht nur deine persönliche Entwicklung, sondern leistest auch einen wertvollen Beitrag zur wissenschaftlichen Forschung.<br>
+      Denk auch an die Belohnung am Ende 🙂.</p>
+
+      <p>Wenn du Fragen hast oder Unterstützung benötigst, stehe ich dir jederzeit gerne zur Verfügung.</p>";
+
 
       // E-Mail versenden
       if (mail($email, $subject, $message, $headers)) {
