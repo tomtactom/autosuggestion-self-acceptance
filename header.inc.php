@@ -3,19 +3,29 @@
 include 'informations.inc.php';
 
 // Datenbankverbindung herstellen
-$servername = $privateData['db_servername']; // ggf. anpassen
-$username = $privateData['db_username']; // ggf. anpassen
-$password = $privateData['db_password']; // ggf. anpassen
-$dbname = $privateData['db_dbname']; // ggf. anpassen
+$servername = $privateData['db_servername'];
+$username = $privateData['db_username'];
+$password = $privateData['db_password'];
+$dbname = $privateData['db_dbname'];
 
-try {
-    // Verbindung zur Datenbank herstellen
-    $dsn = "mysql:host=$servername;dbname=$dbname;charset=utf8mb4";
-    $conn = new PDO($dsn, $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Verbindung zum MySQL-Server (ohne Datenbank) herstellen
+$conn = new mysqli($servername, $username, $password);
 
-    // Tabelle erstellen, falls sie nicht existiert
-    $conn->exec("CREATE TABLE IF NOT EXISTS registrations (
+// Überprüfen, ob die Verbindung erfolgreich war
+if ($conn->connect_error) {
+    die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
+}
+
+// Überprüfen, ob die Datenbank existiert, und sie erstellen, falls nicht
+if (!$conn->select_db($dbname)) {
+    $conn->query("CREATE DATABASE IF NOT EXISTS $dbname");
+    $conn->select_db($dbname); // nach der Erstellung erneut auswählen
+}
+
+// Überprüfen, ob die Tabelle existiert, und sie erstellen, falls nicht
+$table_check = $conn->query("SHOW TABLES LIKE 'registrations'");
+if ($table_check !== false && $table_check->num_rows == 0) {
+    $conn->query("CREATE TABLE registrations (
         id INT AUTO_INCREMENT PRIMARY KEY,
         vpncode VARCHAR(6) NOT NULL UNIQUE,
         email VARCHAR(255) NOT NULL,
@@ -26,13 +36,12 @@ try {
         timestamp_of_registration TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         timestamp_of_last_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     );");
-
-} catch (PDOException $e) {
-    die("Datenbankverbindung fehlgeschlagen: " . $e->getMessage());
 }
 
-?>
-<!DOCTYPE html>
+// Verbindung schließen
+$conn->close();
+
+?><!DOCTYPE html>
 <html lang="de">
   <head>
       <meta charset="UTF-8">
