@@ -174,6 +174,10 @@
               // Formular erstellen
               ?>
               <div class="container">
+                  <p>Ziel dieser Übung ist es, durch die Wiederholung des Satzes „Ich akzeptiere mich so, wie ich bin“ in Gedanken deine Selbstakzeptanz zu fördern.</p>
+                  <p>Lies den Satz langsam und bewusst durch. Nimm dir einen Moment Zeit, um dich auf die Worte zu konzentrieren und in dich hineinzuspüren. Wenn möglich, sprich den Satz in Gedanken aus und wiederhole ihn mehrmals.</p>
+                  <p>Nach Ablauf der Zeit wird ein Button eingeblendet. Klicke bitte auf diesen, um zu bestätigen, dass du die Übung abgeschlossen hast.</p>
+
                   <h1 style="text-align: center">Ich akzeptiere mich so wie ich bin</h1>
 
                   <!-- Timer Container -->
