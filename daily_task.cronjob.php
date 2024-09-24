@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
           $stmt_group2->bind_param("i", $row_group2['id']);
           $stmt_group2->execute();
           $stmt_group2->close();
-          echo '<div class="alert alert-primary" role="alert">Eintrag (Gruppe 2) aktualisiert: ID: ' . $row_group2['id'] . ', neuer email_count: ' . ($row_group2['email_count'] + 1).', Tag: '.(floor($row_group2['email_count'] / 2) + 1).'</div>';
+          echo '<div class="alert alert-primary" role="alert">Eintrag des Nutzers mit der ID ' . $row_group2['id'] . ' wurde aktualisiert (neuer email_count: ' . ($row_group2['email_count'] + 1) . ', Tag: ' . (floor($row_group2['email_count'] / 2) + 1) . ')</div>';
       }
   }
   #################################
@@ -79,7 +79,7 @@ if ($result->num_rows > 0) {
           $stmt->bind_param("i", $row['id']); // ID verwenden, um den count zu erhöhen
           $stmt->execute();
           $stmt->close();
-          echo '<div class="alert alert-primary" role="alert">E-Mail des Nutzers mit der ID '.$row['id'].' wurde versendet (neuer email_count: '.($email_count + 1).', Tag: '.$day.')</div>';
+          echo '<div class="alert alert-primary" role="alert">E-Mail des Nutzers mit der ID ' . $row['id'] . ' wurde versendet und der Eintrag aktualisiert (neuer email_count: ' . ($email_count + 1) . ', Tag: ' . $day . ')</div>';
       } else {
           // Fehler beim Versand
           echo '<div class="alert alert-danger" role="alert">Fehler beim versenden der E-Mail an: '.$email.'.</div>';
