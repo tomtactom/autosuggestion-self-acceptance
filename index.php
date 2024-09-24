@@ -174,13 +174,20 @@
               // Formular erstellen
               ?>
               <div class="container">
-              <h1 style="text-align: center">Ich akzeptiere mich so wie ich bin</h1>
-              <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>&group=<?php echo $_GET['group']; ?>">
-                  <input type="hidden" name="vpncode" value="<?php echo $_GET['vpncode']; ?>">
-                  <input type="hidden" name="day" value="<?php echo $_GET['day']; ?>">
-                  <input type="submit" name="daily_task" value="Aufgabe abschließen">
-              </form>
-            </div>
+                  <h1 style="text-align: center">Ich akzeptiere mich so wie ich bin</h1>
+
+                  <!-- Timer Container -->
+                  <div id="timer" style="width: 100px; height: 100px; border-radius: 50%; border: 10px solid #4CAF50; position: relative; margin: 0 auto;">
+                      <div id="timerCircle" style="width: 100%; height: 100%; border-radius: 50%; background: conic-gradient(#4CAF50 0%, #4CAF50 100%);"></div>
+                  </div>
+
+                  <!-- Formular zur Bestätigung, dass die Übung durchgeführt wurde (Wird erst nach 4 Minuten sichtbar) -->
+                  <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>&group=<?php echo $_GET['group']; ?>" id="taskForm" style="display: none;">
+                      <input type="hidden" name="vpncode" value="<?php echo $_GET['vpncode']; ?>">
+                      <input type="hidden" name="day" value="<?php echo $_GET['day']; ?>">
+                      <input type="submit" name="daily_task" value="Aufgabe abschließen">
+                  </form>
+              </div>
               <?php
             } elseif ($_GET['group'] == 2) {
               echo '<div class="alert alert-warning" role="alert">Du bist nicht berechtigt diesen Teil der Webseite zu verwenden, da du in Gruppe 2 bist.</div>';

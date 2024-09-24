@@ -26,15 +26,24 @@ if ($result->num_rows > 0) {
       $vpncode = $row['vpncode'];
 
       // E-Mail-Inhalt
-      $message = "<p>Liebe:r Teilnehmer:in,</p>
+      // E-Mail-Inhalt
+      $message = "<h2>Der Letzte Fragebogen</h2>
+                  <p>Liebe:r Teilnehmer:in,</p>
 
-      <p>herzlichen Glückwunsch, du hast alle täglichen Übungen abgeschlossen!</p>
-      <p>Nun bitten wir dich, den <a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."'>zweiten Fragebogen</a> auszufüllen.</p>
-      <p>Es dauert nur wenige Minuten und hilft uns, die Ergebnisse der Studie zu vervollständigen. Vielen Dank für deine Unterstützung!</p>
+                  <p>herzlichen Glückwunsch! Du hast alle täglichen Übungen mit großem Engagement abgeschlossen, und dafür möchte ich dir von Herzen danken. 💚</p>
 
-      <small>Falls du den Link nicht anklicken kannst, kannst du ihn hier kopieren: <strong><a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode.">https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."</a></strong></small>
+                  <p>Jetzt stehst du kurz vor dem letzten Schritt: Bitte nimm dir ein paar Minuten Zeit, um den <a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."'>zweiten Fragebogen</a> auszufüllen.</p>
 
-      <p>Vielen Dank und alles Gute!</p>";
+                  <p>Deine Teilnahme ist für mich von großer Bedeutung, und ich schätze es sehr, dass du dir die Zeit nimmst, um an dieser Umfrage teilzunehmen.</p>
+
+                  <p>Nach Abschluss des zweiten Fragebogens kannst du an der Verlosung der 3x 10 € Wunschgutscheine teilnehmen. Du bekommst den kostenlosen Zugang für 3 Monaten Premium der 7mind Meditationsapp, und die 3,5 Versuchspersonenstunden als Psychologie-Student:in der HSRW. Auch bekommst du Zugang zu den Ergebnissen der Studie 🙂.
+
+                  <small>Falls du den Link nicht anklicken kannst, kannst du ihn hier kopieren: <strong><a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."'>https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."</a></strong></small>
+
+                  <p>Ich danke dir noch einmal für deine Zeit und wünsche dir alles Gute!</p>
+
+                  <p>Liebe Grüße,</p>
+                  <p>Tom</p>";
 
       // E-Mail versenden
       if (mail($email, $subject, $message, $headers)) {
