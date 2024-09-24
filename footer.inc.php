@@ -9,8 +9,8 @@
                 <p class="text-muted" id="phone-container"></p>
             </div>
             <div class="col-md-6 text-md-right">
-                <button class="btn btn-link text-muted" data-toggle="modal" data-target="#impressumModal" aria-label="Impressum anzeigen">Impressum</button>
-                <button class="btn btn-link text-muted" data-toggle="modal" data-target="#datenschutzModal" aria-label="Datenschutz anzeigen">Datenschutz</button>
+                <button class="btn btn-link text-muted" data-bs-toggle="modal" data-bs-target="#impressumModal" aria-label="Impressum anzeigen">Impressum</button>
+                <button class="btn btn-link text-muted" data-bs-toggle="modal" data-bs-target="#datenschutzModal" aria-label="Datenschutz anzeigen">Datenschutz</button>
             </div>
         </div>
     </div>
