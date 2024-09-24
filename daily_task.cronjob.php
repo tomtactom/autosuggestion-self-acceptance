@@ -12,7 +12,7 @@ if ($_GET['daytime'] == "morning") {
 include 'header.inc.php';
 
 // Holen der E-Mail-Adressen und VPN-Codes aus der Datenbank
-$sql = "SELECT id, email, vpncode FROM registrations WHERE `group` = 1 AND email_count <= 20";
+$sql = "SELECT id, email, vpncode, email_count FROM registrations WHERE `group` = 1 AND email_count <= 20";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
