@@ -63,8 +63,8 @@ if ($table_check !== false && $table_check->num_rows == 0) {
 
       <!-- JavaScript-Dateien -->
       <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-6crM8dMz8mI1AlSwfTuG8w9MZo/g5U1YAWP9T4lDQh0=" crossorigin="anonymous"></script>
-      <script src="https://unpkg.com/@popperjs/core@2"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <!--<script src="https://unpkg.com/@popperjs/core@2"></script>-->
+      <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
 
       <title>Selbstakzeptanz Übung</title>
   </head>
