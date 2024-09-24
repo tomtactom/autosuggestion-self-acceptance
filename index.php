@@ -174,7 +174,7 @@
               // Formular erstellen
               ?>
               <div class="container">
-                  <div class="accordion" id="selfAcceptanceAccordion">
+                    <div class="accordion" id="selfAcceptanceAccordion">
                       <div class="accordion-item">
                           <h2 class="accordion-header" id="headingOne">
                               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:grey;">
