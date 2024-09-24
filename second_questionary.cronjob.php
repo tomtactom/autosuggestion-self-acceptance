@@ -9,7 +9,7 @@ if ($_GET['passkey'] != "Fq1X1uozDYZt6ycq8dMjts8jF4ZK9F7M") {
 include 'header.inc.php';
 
 // SQL-Abfrage, um Einträge zu finden, bei denen email_count gleich 20 ist
-$sql = "SELECT id, email, vpncode, email_count FROM registrations WHERE email_count = 20";
+$sql = "SELECT id, email, vpncode, email_count, `group` FROM registrations WHERE email_count = 20";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -32,18 +32,18 @@ if ($result->num_rows > 0) {
 
                   <p>herzlichen Glückwunsch! Du hast alle täglichen Übungen mit großem Engagement abgeschlossen, und dafür möchte ich dir von Herzen danken. 💚</p>
 
-                  <p>Jetzt stehst du kurz vor dem letzten Schritt: Bitte nimm dir ein paar Minuten Zeit, um den <a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."'>zweiten Fragebogen</a> auszufüllen.</p>
+                  <p>Jetzt stehst du kurz vor dem letzten Schritt: Bitte nimm dir ein paar Minuten Zeit, um den <a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."&ugroup=".$row['group'].">zweiten Fragebogen</a> auszufüllen.</p>
 
                   <p>Deine Teilnahme ist für mich von großer Bedeutung, und ich schätze es sehr, dass du dir die Zeit nimmst, um an dieser Umfrage teilzunehmen.</p>
 
                   <p>Nach Abschluss des zweiten Fragebogens kannst du an der Verlosung der 3x 10 € Wunschgutscheine teilnehmen. Du bekommst den kostenlosen Zugang für 3 Monaten Premium der 7mind Meditationsapp, und die 3,5 Versuchspersonenstunden als Psychologie-Student:in der HSRW. Auch bekommst du Zugang zu den Ergebnissen der Studie 🙂.
 
-                  <small>Falls du den Link nicht anklicken kannst, kannst du ihn hier kopieren: <strong><a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."'>https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."</a></strong></small>
+                  <p><small>Falls du den Link nicht anklicken kannst, kannst du ihn hier kopieren: <strong><a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."&ugroup=".$row['group']."'>https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."&ugroup=".$row['group']."</a></strong></small></p>
 
                   <p>Ich danke dir noch einmal für deine Zeit und wünsche dir alles Gute!</p>
 
                   <p>Liebe Grüße,</p>
-                  <p>Tom</p>";
+                  <p>Tom Aschmann</p>";
 
       // E-Mail versenden
       if (mail($email, $subject, $message, $headers)) {
