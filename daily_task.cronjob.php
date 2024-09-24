@@ -1,30 +1,31 @@
 <?php
 if ($_GET['daytime'] == "morning") {
-
+    // Morgen-spezifische Logik hier
 } elseif ($_GET['daytime'] == "evening") {
-
+    // Abend-spezifische Logik hier
 } else {
-  http_response_code(422); // 422 Unprocessable Entity wird verwendet, wenn die Anfrage korrekt ist, aber die übermittelten Daten aus inhaltlichen Gründen nicht verarbeitet werden können
-  exit;
+    http_response_code(422); // 422 Unprocessable Entity
+    exit;
 }
 
 // Einbinden der header.inc.php
 include 'header.inc.php';
 
 // Holen der E-Mail-Adressen und VPN-Codes aus der Datenbank
-$sql = "SELECT email, vpncode, email_count FROM registrations WHERE `group` = 1 AND email_count <= 20";
+$sql = "SELECT id, email, vpncode FROM registrations WHERE `group` = 1 AND email_count <= 20";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // E-Mail-Header
     $subject = "Ihr VPN-Code";
     $headers = "From: " . $privateData['server_email'] . "\r\n" .
-           "Reply-To: ".$privateData['email']."\r\n" . // Antwort an die spezifische E-Mail-Adresse
-           "Content-Type: text/html; charset=UTF-8\r\n" . // HTML-Header
-           "X-Mailer: PHP/" . phpversion();
+               "Reply-To: " . $privateData['email'] . "\r\n" . // Antwort an die spezifische E-Mail-Adresse
+               "Content-Type: text/html; charset=UTF-8\r\n" . // HTML-Header
+               "X-Mailer: PHP/" . phpversion();
 
     // Schleife durch alle Zeilen im Ergebnis
     while ($row = $result->fetch_assoc()) {
+        $id = $row['id']; // ID für die Aktualisierung
         $email = $row['email'];
         $vpncode = $row['vpncode'];
 
@@ -34,9 +35,9 @@ if ($result->num_rows > 0) {
         // E-Mail versenden
         if (mail($email, $subject, $message, $headers)) {
             // E-Mail erfolgreich versendet, email_count erhöhen
-            $update_sql = "UPDATE registrations SET email_count = email_count + 1 WHERE email = ?";
+            $update_sql = "UPDATE registrations SET email_count = email_count + 1 WHERE id = ?";
             $stmt = $conn->prepare($update_sql);
-            $stmt->bind_param("s", $email);
+            $stmt->bind_param("i", $id); // ID binden
             $stmt->execute();
             $stmt->close();
         } else {
