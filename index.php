@@ -259,7 +259,7 @@
                   }
 
                   // Verhindere mehrfaches Absenden, indem die Seite neu geladen wird
-                  header("Location: ?vpncode=$vpncode&day=$day&group=$group");
+                  echo '<meta http-equiv="refresh" content="0;url=?vpncode=' . htmlspecialchars($vpncode) . '&day=' . htmlspecialchars($day) . '&group=' . htmlspecialchars($group) . '">';
                   exit;
               }
 
