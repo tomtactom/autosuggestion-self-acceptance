@@ -174,9 +174,24 @@
               // Formular erstellen
               ?>
               <div class="container">
-                  <p>Ziel dieser Übung ist es, durch die Wiederholung des Satzes „Ich akzeptiere mich so, wie ich bin“ in Gedanken deine Selbstakzeptanz zu fördern.</p>
-                  <p>Lies den Satz langsam und bewusst durch. Nimm dir einen Moment Zeit, um dich auf die Worte zu konzentrieren und in dich hineinzuspüren. Wenn möglich, sprich den Satz in Gedanken aus und wiederhole ihn mehrmals.</p>
-                  <p>Nach Ablauf der Zeit wird ein Button eingeblendet. Klicke bitte auf diesen, um zu bestätigen, dass du die Übung abgeschlossen hast.</p>
+                  <div class="accordion" id="selfAcceptanceAccordion">
+                      <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Hinweis
+                              </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#selfAcceptanceAccordion">
+                              <div class="accordion-body">
+                                  <p>Ziel dieser Übung ist es, durch die Wiederholung des Satzes "Ich akzeptiere mich so, wie ich bin" in Gedanken deine Selbstakzeptanz zu fördern.</p>
+
+                                  <p>Lies den Satz langsam und bewusst durch. Nimm dir einen Moment Zeit, um dich auf die Worte zu konzentrieren und in dich hineinzuspüren. Wenn möglich, sprich den Satz in Gedanken aus und wiederhole ihn mehrmals.</p>
+
+                                  <p>Nach Ablauf der Zeit wird ein Button eingeblendet. Klicke bitte auf diesen, um zu bestätigen, dass du die Übung abgeschlossen hast.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
                   <h1 style="text-align: center">Ich akzeptiere mich so wie ich bin</h1>
 
