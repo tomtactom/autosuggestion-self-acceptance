@@ -59,14 +59,16 @@ if ($result->num_rows > 0) {
           $stmt->bind_param("i", $row['id']); // ID verwenden, um den count zu erhöhen
           $stmt->execute();
           $stmt->close();
+          echo '<div class="alert alert-primary" role="alert">E-Mail des Nutzers mit der ID '.$row['id'].' wurde versendet (Counter: '.$email_count.', Tag: '.$day.')</div>';
       } else {
           // Fehler beim Versand
+          echo '<div class="alert alert-danger" role="alert">Fehler beim versenden der E-Mail an: '.$email.'.</div>';
           error_log("Fehler beim Versenden der E-Mail an: $email");
       }
   }
 
 } else {
-    echo "Keine E-Mail-Adressen zu versenden.";
+    echo '<div class="alert alert-warning" role="alert">Keine E-Mail-Adressen zu versenden.</div>';
 }
 
 // Verbindung schließen
