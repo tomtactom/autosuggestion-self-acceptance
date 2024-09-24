@@ -1,4 +1,5 @@
 <?php
+// Damit nur der Cronjob die Seite ausführt, ist ein Passkey (Public Key) integriert
 if ($_GET['passkey'] != "Fq1X1uozDYZt6ycq8dMjts8jF4ZK9F7M") {
     http_response_code(422); // 422 Unprocessable Entity
     exit;
