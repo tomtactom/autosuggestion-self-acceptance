@@ -52,60 +52,60 @@
                 </div>
                 <div class="modal-body">
                     <p><strong>Datenschutz</strong></p>
-                      <p>Herzlich willkommen auf unserer Webseite! Wir freuen uns über Ihr Interesse und möchten Ihnen transparent und verständlich erklären, wie wir Ihre Daten behandeln.</p>
+                    <p>Herzlich willkommen auf dieser Webseite! Es wird erläutert, wie die Daten behandelt werden.</p>
 
-                      <p><strong>1. Wer ist für die Datenverarbeitung verantwortlich?</strong></p>
-                      <p><?php echo $privateData['name']; ?><br>
-                      <?php echo $privateData['address']; ?><br>
-                      Telefon: <?php echo $privateData['phone']; ?><br>
-                      E-Mail: <?php echo $privateData['email']; ?></p>
+                    <p><strong>1. Verantwortliche Stelle</strong></p>
+                    <p><?php echo $privateData['name']; ?><br>
+                    <?php echo $privateData['address']; ?><br>
+                    Telefon: <?php echo $privateData['phone']; ?><br>
+                    E-Mail: <?php echo $privateData['email']; ?></p>
 
-                      <p><strong>2. Welche Daten erfassen wir und warum?</strong></p>
-                      <ul style="text-align: left;">
-                          <li><strong>Technische Daten:</strong> Wie bei vielen Webseiten üblich, erfassen wir technische Informationen wie Ihre IP-Adresse, den Browsertyp und das Datum sowie die Uhrzeit Ihres Besuchs. Diese Daten helfen uns, die Webseite zu optimieren und sicherzustellen, dass alles reibungslos funktioniert.</li>
-                          <li><strong>Formulardaten:</strong> Wenn Sie unser Formular nutzen, speichern wir Ihre E-Mail-Adresse, um Ihnen wichtige Informationen oder Updates zukommen zu lassen.</li>
-                          <li><strong>Pseudonymisierte Daten:</strong> Wir verwenden einen VPN-Code, der gemeinsam mit den Daten durch SoSciSurvey verarbeitet wird. Diese Daten sind pseudonymisiert und werden ausschließlich zu Forschungszwecken verwendet.</li>
-                          <li><strong>Psychologische und psychometrische Gesundheitsdaten:</strong> Im Rahmen unserer Studie erfassen wir diese speziellen Daten, um herauszufinden, wie Autosuggestionen die Selbstakzeptanz beeinflussen können.</li>
-                      </ul>
+                    <p><strong>2. Erfasste Daten und Zweck</strong></p>
+                    <ul style="text-align: left;">
+                        <li><strong>Technische Daten:</strong> Wie bei vielen Webseiten üblich, werden technische Informationen wie die IP-Adresse, der Browsertyp und das Datum sowie die Uhrzeit des Besuchs erfasst. Diese Daten helfen, die Webseite zu optimieren und sicherzustellen, dass alles reibungslos funktioniert.</li>
+                        <li><strong>Formulardaten:</strong> Wenn das Formular genutzt wird, werden die E-Mail-Adresse und andere eingegebene Daten gespeichert, um wichtige Informationen oder Updates zukommen zu lassen.</li>
+                        <li><strong>Pseudonymisierte Daten:</strong> Ein VPN-Code wird zusammen mit den Daten durch SoSciSurvey verarbeitet. Diese Daten sind pseudonymisiert und werden ausschließlich zu Forschungszwecken verwendet.</li>
+                        <li><strong>Psychologische und psychometrische Gesundheitsdaten:</strong> Im Rahmen der Studie werden spezielle Daten erfasst, um herauszufinden, wie Autosuggestionen die Selbstakzeptanz beeinflussen können.</li>
+                    </ul>
 
-                      <p><strong>3. Warum verarbeiten wir Ihre Daten?</strong></p>
-                      <p>Ihre Daten helfen uns, wissenschaftliche Erkenntnisse zu gewinnen und die Studie erfolgreich durchzuführen. Wir anonymisieren die Daten so schnell wie möglich, um Ihre Privatsphäre zu schützen. Anonyme Daten können langfristig gespeichert und veröffentlicht werden, um die Forschung weiter voranzutreiben.</p>
+                    <p><strong>3. Zweck der Datenverarbeitung</strong></p>
+                    <p>Die Daten helfen, wissenschaftliche Erkenntnisse zu gewinnen und die Studie erfolgreich durchzuführen. Die Daten werden so schnell wie möglich anonymisiert, um die Privatsphäre zu schützen. Anonyme Daten können langfristig gespeichert und veröffentlicht werden, um die Forschung weiter voranzutreiben.</p>
 
-                      <p><strong>4. Geben wir Ihre Daten weiter?</strong></p>
-                      <p>Ihre pseudonymisierten Daten werden an SoSciSurvey und Netcup weitergegeben. Beide Partner sind verpflichtet, Ihre Daten sicher zu behandeln und nur für die Zwecke unserer Studie zu nutzen. Alle Server befinden sich in Deutschland, und Ihre Daten werden über verschlüsselte Verbindungen übertragen. Pseudonymisierte Daten werden nicht in Drittländer übertragen, während anonyme Daten aus wissenschaftlichem Interesse veröffentlicht werden können.</p>
+                    <p><strong>4. Datenweitergabe</strong></p>
+                    <p>Die pseudonymisierten Daten werden an SoSciSurvey weitergegeben. Dieser Partner ist verpflichtet, die Daten sicher zu behandeln und nur für die Zwecke der Studie zu nutzen. Alle Server befinden sich in Deutschland, und die Daten werden über verschlüsselte Verbindungen übertragen. Pseudonymisierte Daten werden nicht in Drittländer übertragen, während anonyme Daten aus wissenschaftlichem Interesse veröffentlicht werden können.</p>
 
-                      <p><strong>5. Wie lange speichern wir Ihre Daten?</strong></p>
-                      <p>Wir speichern Ihre personenbezogenen Daten bis zum Ende des Projektes oder spätestens bis Ende 2026. Danach werden die Daten anonymisiert und in dieser Form unbegrenzt aufbewahrt.</p>
+                    <p><strong>5. Speicherdauer der Daten</strong></p>
+                    <p>Die personenbezogenen Daten werden bis zum Ende des Projektes oder spätestens bis Ende 2026 gespeichert. Danach werden die Daten anonymisiert und in dieser Form unbegrenzt aufbewahrt.</p>
 
-                      <p><strong>6. Welche Rechte haben Sie?</strong></p>
-                      <p>Sie haben das Recht, Auskunft über die von Ihnen gespeicherten Daten zu erhalten sowie deren Berichtigung oder Löschung zu verlangen. Pseudonymisierte Daten können auf Anfrage korrigiert oder gelöscht werden. Sobald die Daten anonymisiert sind, ist eine Löschung oder Berichtigung nicht mehr möglich. Bitte senden Sie dazu eine formale E-Mail an uns.</p>
+                    <p><strong>6. Rechte der betroffenen Personen</strong></p>
+                    <p>Es besteht das Recht, Auskunft über die gespeicherten Daten zu erhalten sowie deren Berichtigung oder Löschung zu verlangen. Pseudonymisierte Daten können auf Anfrage korrigiert oder gelöscht werden. Nach der Anonymisierung ist eine Löschung oder Berichtigung nicht mehr möglich. Bei Fragen dazu kann eine formale E-Mail gesendet werden.</p>
 
-                      <p><strong>7. Beschwerderecht und Widerruf</strong></p>
-                      <p>Wenn Sie der Ansicht sind, dass wir Ihre Daten nicht korrekt verarbeiten, haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren. Sollten Sie uns Ihre Einwilligung zur Datenverarbeitung gegeben haben, können Sie diese jederzeit widerrufen. Der Widerruf hat keinen Einfluss auf die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.</p>
+                    <p><strong>7. Beschwerderecht und Widerruf</strong></p>
+                    <p>Bei der Annahme, dass die Daten nicht korrekt verarbeitet werden, besteht das Recht, sich bei einer Aufsichtsbehörde zu beschweren. Eine erteilte Einwilligung zur Datenverarbeitung kann jederzeit widerrufen werden. Der Widerruf hat keinen Einfluss auf die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.</p>
 
-                      <p><strong>8. Kontakt bei Datenschutzfragen</strong></p>
-                      <p>Wenn Sie Fragen zum Datenschutz haben oder Ihre Rechte ausüben möchten, können Sie uns gerne kontaktieren:<br>
-                      <?php echo $privateData['name']; ?><br>
-                      <?php echo $privateData['address']; ?><br>
-                      Telefon: <?php echo $privateData['phone']; ?><br>
-                      E-Mail: <?php echo $privateData['email']; ?></p>
+                    <p><strong>8. Kontakt bei Datenschutzfragen</strong></p>
+                    <p>Bei Fragen zum Datenschutz oder zur Ausübung der Rechte kann gerne Kontakt aufgenommen werden:<br>
+                    <?php echo $privateData['name']; ?><br>
+                    <?php echo $privateData['address']; ?><br>
+                    Telefon: <?php echo $privateData['phone']; ?><br>
+                    E-Mail: <?php echo $privateData['email']; ?></p>
 
-                      <p>Sollte der Kontakt zu mir nicht möglich sein, wenden Sie sich bitte an den Datenschutzbeauftragten der Hochschule Rhein-Waal:</p>
-                      <p>Andreas Braam<br>
-                      Marie-Curie-Straße 1<br>
-                      47533 Kleve<br>
-                      E-Mail: datenschutz@hochschule-rhein-waal.de</p>
+                    <p>Wenn der Kontakt nicht möglich ist, kann sich an den Datenschutzbeauftragten der Hochschule Rhein-Waal gewandt werden:</p>
+                    <p>Andreas Braam<br>
+                    Marie-Curie-Straße 1<br>
+                    47533 Kleve<br>
+                    E-Mail: datenschutz@hochschule-rhein-waal.de</p>
 
-                      <p><strong>9. Cookies und ähnliche Technologien</strong></p>
-                      <p>Wir verwenden keine Cookies. Es werden jedoch pseudonymisierte Daten zum Klickverhalten und zur Nutzung der Autosuggestionen erfasst.</p>
+                    <p><strong>9. Cookies und ähnliche Technologien</strong></p>
+                    <p>Es werden keine Cookies verwendet. Allerdings werden pseudonymisierte Daten zum Klickverhalten und zur Nutzung der Autosuggestionen erfasst.</p>
 
-                      <p><strong>10. Änderungen der Datenschutzerklärung</strong></p>
-                      <p>Änderungen dieser Datenschutzerklärung werden per E-Mail an die von Ihnen angegebene Adresse kommuniziert. Es liegt in Ihrer Verantwortung, sich über etwaige Änderungen zu informieren. Bei fehlender E-Mail-Adresse sind Sie eigenverantwortlich, sich regelmäßig über Aktualisierungen zu informieren.</p>
+                    <p><strong>10. Änderungen der Datenschutzerklärung</strong></p>
+                    <p>Änderungen dieser Datenschutzerklärung werden per E-Mail an die angegebene Adresse kommuniziert. Es liegt in der Verantwortung, sich über etwaige Änderungen zu informieren. Bei fehlender E-Mail-Adresse ist es wichtig, sich regelmäßig über Aktualisierungen zu informieren.</p>
 
-                      <p><strong>11. SoSciSurvey und Auftragsverarbeitung</strong></p>
-                      <p>SoSciSurvey verarbeitet die von Ihnen bereitgestellten pseudonymisierten Daten im Auftrag von <?php echo $privateData['name']; ?> gemäß dem abgeschlossenen Auftragsverarbeitungsvertrag. SoSciSurvey verpflichtet sich, die Daten gemäß den geltenden Datenschutzbestimmungen zu schützen und ausschließlich für die in der Studie vorgesehenen Zwecke zu verwenden.</p>
-
+                    <p><strong>11. SoSciSurvey und Auftragsverarbeitung</strong></p>
+                    <p>SoSciSurvey verarbeitet die bereitgestellten pseudonymisierten Daten im Auftrag von <?php echo $privateData['name']; ?> gemäß dem abgeschlossenen Auftragsverarbeitungsvertrag. SoSciSurvey verpflichtet sich, die Daten gemäß den geltenden Datenschutzbestimmungen zu schützen und ausschließlich für die in der Studie vorgesehenen Zwecke zu verwenden.</p>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
                 </div>

@@ -177,8 +177,8 @@
                   <div class="accordion" id="selfAcceptanceAccordion">
                       <div class="accordion-item">
                           <h2 class="accordion-header" id="headingOne">
-                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  Hinweis
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:grey;">
+                                  Anleitung
                               </button>
                           </h2>
                           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#selfAcceptanceAccordion">
@@ -191,7 +191,7 @@
                               </div>
                           </div>
                       </div>
-                  </div>
+                  </div><br>
 
                   <h1 style="text-align: center">Ich akzeptiere mich so wie ich bin</h1>
 
