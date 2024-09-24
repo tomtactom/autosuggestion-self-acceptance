@@ -8,7 +8,7 @@ if ($_GET['passkey'] != "Fq1X1uozDYZt6ycq8dMjts8jF4ZK9F7M") {
 include 'header.inc.php';
 
 // Holen der E-Mail-Adressen und VPN-Codes aus der Datenbank
-$sql = "SELECT id, email, vpncode, email_count FROM registrations WHERE `group` = 1 AND email_count <= 20";
+$sql = "SELECT id, email, vpncode, email_count FROM registrations WHERE `group` = 1 AND email_count < 20";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -73,4 +73,5 @@ if ($result->num_rows > 0) {
 
 // Verbindung schließen
 $conn->close();
+require './footer.inc.php';
 ?>
