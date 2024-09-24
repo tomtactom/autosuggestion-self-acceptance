@@ -39,7 +39,7 @@ if ($table_check !== false && $table_check->num_rows == 0) {
 }
 
 // Verbindung schließen
-$conn->close();
+#$conn->close();#Nicht schließen, da später noch drauf zugegriffen wird
 
 ?><!DOCTYPE html>
 <html lang="de">
@@ -66,15 +66,13 @@ $conn->close();
       <script src="https://unpkg.com/@popperjs/core@2"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-      <title>Selbstakzeptanz Autosuggestion</title>
+      <title>Selbstakzeptanz Übung</title>
   </head>
 <body>
   <header>
         <div class="container">
             <h1 class="my-4">Selbstakzeptanz Übung</h1>
-            <p class="lead">Bachelorarbeit Studie über Selbstakzeptanz</p>
+            <p class="lead">Bachelorarbeit-Studie über Selbstakzeptanz</p>
         </div>
     </header>
-
-    <!-- Dein Hauptinhalt hier -->
     <main>
