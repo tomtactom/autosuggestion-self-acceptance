@@ -32,17 +32,17 @@ $table_check = $conn->query("SHOW TABLES LIKE 'registrations'");
 
 if ($table_check !== false && $table_check->num_rows == 0) {
     // Tabelle erstellen, falls sie nicht existiert
-    $conn->query("
-    CREATE TABLE IF NOT EXISTS registrations (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        vpncode VARCHAR(6) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        `group` TINYINT NOT NULL,
-        day JSON NULL,
-        note TEXT NULL,
-        timestamp_of_registration TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        timestamp_of_last_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    )");
+    $conn->query("CREATE TABLE IF NOT EXISTS registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vpncode VARCHAR(6) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL,
+    `group` TINYINT NOT NULL,
+    day JSON NULL,
+    note TEXT NULL,
+    email_count INT DEFAULT 0,
+    timestamp_of_registration TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    timestamp_of_last_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);");
 }
 ?>
 <!DOCTYPE html>
