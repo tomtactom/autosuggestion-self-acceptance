@@ -13,6 +13,24 @@ $sql = "SELECT id, email, vpncode, email_count FROM registrations WHERE `group` 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
+  ################################# Nur Für Gruppe 2
+  // Erhöhen des email_count für Gruppe 2
+  $sql_group2 = "SELECT id, email_count FROM registrations WHERE `group` = 2 AND email_count < 20";
+  $result_group2 = $conn->query($sql_group2);
+
+  if ($result_group2->num_rows > 0) {
+      while ($row_group2 = $result_group2->fetch_assoc()) {
+          // Erhöhung des email_count für Gruppe 2
+          $update_sql_group2 = "UPDATE registrations SET email_count = email_count + 1 WHERE id = ?";
+          $stmt_group2 = $conn->prepare($update_sql_group2);
+          $stmt_group2->bind_param("i", $row_group2['id']);
+          $stmt_group2->execute();
+          $stmt_group2->close();
+      }
+  }
+  #################################
+
+
   // E-Mail-Header
   $subject = "Deine heutige Selbstakzeptanz-Übung";
   $headers = "From: " . $privateData['server_email'] . "\r\n" .
