@@ -56,7 +56,8 @@ if ($result->num_rows > 0) {
           <p>Bei Fragen oder weiteren Informationen stehen wir Ihnen gerne zur Verfügung.</p>
           <p>Mit freundlichen Grüßen,<br>Das Team von [Ihr Team-Name oder Projektname]<br>[Kontaktinformationen]</p>
       </body>
-      </html>";
+      </html>
+      ";
 
       // E-Mail versenden
       if (mail($email, $subject, $message, $headers)) {
@@ -71,6 +72,7 @@ if ($result->num_rows > 0) {
           error_log("Fehler beim Versenden der E-Mail an: $email");
       }
   }
+
 } else {
     echo "Keine E-Mail-Adressen zu versenden.";
 }
