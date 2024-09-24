@@ -8,42 +8,29 @@ $username = $privateData['db_username']; // ggf. anpassen
 $password = $privateData['db_password']; // ggf. anpassen
 $dbname = $privateData['db_dbname']; // ggf. anpassen
 
-// Verbindung zum MySQL-Server (ohne Datenbank) herstellen
-$conn = new mysqli($servername, $username, $password);
+try {
+    // Verbindung zur Datenbank herstellen
+    $dsn = "mysql:host=$servername;dbname=$dbname;charset=utf8mb4";
+    $conn = new PDO($dsn, $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Überprüfen, ob die Verbindung erfolgreich war
-if ($conn->connect_error) {
-    die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
-}
-
-// Überprüfen, ob die Datenbank existiert
-$db_check = $conn->query("SHOW DATABASES LIKE '$dbname'");
-
-if ($db_check !== false && $db_check->num_rows == 0) {
-    // Datenbank erstellen, falls sie nicht existiert
-    $conn->query("CREATE DATABASE IF NOT EXISTS $dbname");
-}
-
-// Verbindung zur Datenbank herstellen
-$conn->select_db($dbname);
-
-// Überprüfen, ob die Tabelle existiert
-$table_check = $conn->query("SHOW TABLES LIKE 'registrations'");
-
-if ($table_check !== false && $table_check->num_rows == 0) {
     // Tabelle erstellen, falls sie nicht existiert
-    $conn->query("CREATE TABLE IF NOT EXISTS registrations (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    vpncode VARCHAR(6) NOT NULL UNIQUE,
-    email VARCHAR(255) NOT NULL,
-    `group` TINYINT NOT NULL,
-    day JSON NULL,
-    note TEXT NULL,
-    email_count INT DEFAULT 0,
-    timestamp_of_registration TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    timestamp_of_last_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);");
+    $conn->exec("CREATE TABLE IF NOT EXISTS registrations (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        vpncode VARCHAR(6) NOT NULL UNIQUE,
+        email VARCHAR(255) NOT NULL,
+        `group` TINYINT NOT NULL,
+        day JSON NULL,
+        note TEXT NULL,
+        email_count INT DEFAULT 0,
+        timestamp_of_registration TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        timestamp_of_last_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    );");
+
+} catch (PDOException $e) {
+    die("Datenbankverbindung fehlgeschlagen: " . $e->getMessage());
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
