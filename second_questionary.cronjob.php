@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
 
                   <p>herzlichen Glückwunsch! Du hast alle täglichen Übungen mit großem Engagement abgeschlossen, und dafür möchte ich dir von Herzen danken. 💚</p>
 
-                  <p>Jetzt stehst du kurz vor dem letzten Schritt: Bitte nimm dir ein paar Minuten Zeit, um den <a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."&ugroup=".$row['group'].">zweiten Fragebogen</a> auszufüllen.</p>
+                  <p>Jetzt stehst du kurz vor dem letzten Schritt: Bitte nimm dir ein paar Minuten Zeit, um den <a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."&ugroup=".$row['group']."'>zweiten Fragebogen</a> auszufüllen.</p>
 
                   <p>Deine Teilnahme ist für mich von großer Bedeutung, und ich schätze es sehr, dass du dir die Zeit nimmst, um an dieser Umfrage teilzunehmen.</p>
 
