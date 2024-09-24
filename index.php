@@ -182,10 +182,10 @@
                   </div>
 
                   <!-- Formular zur Bestätigung, dass die Übung durchgeführt wurde (Wird erst nach 4 Minuten sichtbar) -->
-                  <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>&group=<?php echo $_GET['group']; ?>" id="taskForm" style="display: none;">
+                  <form method="post" action="?vpncode=<?php echo $_GET['vpncode']; ?>&day=<?php echo $_GET['day']; ?>&group=<?php echo $_GET['group']; ?>" id="taskForm" class="text-center mt-4" style="display: none;">
                       <input type="hidden" name="vpncode" value="<?php echo $_GET['vpncode']; ?>">
                       <input type="hidden" name="day" value="<?php echo $_GET['day']; ?>">
-                      <input type="submit" name="daily_task" value="Aufgabe abschließen">
+                      <button type="submit" name="daily_task" class="btn btn-success btn-lg">Aufgabe abschließen</button>
                   </form>
               </div>
               <?php

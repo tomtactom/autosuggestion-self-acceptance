@@ -18,6 +18,20 @@ main {
   padding: 5rem;
 }
 
+#taskForm {
+    transition: all 0.3s ease;
+}
+
+.btn {
+    padding: 10px 20px; /* Mehr Padding für den Button */
+    font-size: 1.2em; /* Größere Schriftart */
+    border-radius: 5px; /* Abgerundete Ecken */
+}
+
+#timerCircle {
+    transition: background 0.3s ease; /* Sanfte Übergänge für den Timer */
+}
+
 /* Footer-Styling */
 footer {
   background-color: #f8f9fa;
