@@ -219,6 +219,15 @@
                       <input type="hidden" name="day" value="<?php echo $_GET['day']; ?>">
                       <button type="submit" name="daily_task" class="btn btn-success btn-lg">Aufgabe abschließen</button>
                   </form>
+                  <noscript>
+                      <p>Da der Browser kein JavaScript unterstütz kann der Timer nicht angezeigt werden. Bitte mache diese Übung 4 Minuten lang und achte selbst auf die Zeit. Klicke anschließend auf „Aufgabe abschließen“.</p>
+                      <style>
+                          /* Wenn kein JS aktiv ist, wird das Formular eingeblendet */
+                          #taskForm {
+                              display: block;
+                          }
+                      </style>
+                  </noscript>
               </div>
               <?php
             } elseif ($_GET['group'] == 2) {
