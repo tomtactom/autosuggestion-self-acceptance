@@ -1,7 +1,7 @@
 <?php
     require './header.inc.php'; # Header Datei, in welcher beginnende Inhalte gespeichert sind, die auf jeder Seite anfangs eingebunden werden
     require './send_email.inc.php';
-    if (isset($_GET['vpncode']) && strlen($_GET['vpncode']) == 6 && isset($_GET['group']) && is_numeric($_GET['group']) && (intval($_GET['group']) == 1 || intval($_GET['group']) == 2)) { # Abfrage der immer benötigten GET-Parameter
+    if (isset($_GET['vpncode']) && mb_strlen($_GET['vpncode'], "utf-8") == 6 && isset($_GET['group']) && is_numeric($_GET['group']) && (intval($_GET['group']) == 1 || intval($_GET['group']) == 2)) { # Abfrage der immer benötigten GET-Parameter
 // Registrierung
         if (isset($_GET['register']) && !isset($_GET['day'])) { # Abfrage ob Person registriert werden soll (und Ausschluss des day-GET-Parameters)
           if ($_GET['register'] == 1) {
