@@ -18,7 +18,9 @@ if ($result->num_rows > 0) {
   $headers = "From: " . $privateData['server_email'] . "\r\n" .
              "Reply-To: " . $privateData['email'] . "\r\n" .
              "Content-Type: text/html; charset=UTF-8\r\n" .
-             "X-Mailer: PHP/" . phpversion();
+             "X-Mailer: PHP/" . phpversion() . "\r\n" .
+             "X-Priority: 1\r\n" . // Hoch
+             "Importance: High\r\n"; // Zusätzlich für einige Clients
 
   // Schleife durch alle Zeilen im Ergebnis
   while ($row = $result->fetch_assoc()) {
