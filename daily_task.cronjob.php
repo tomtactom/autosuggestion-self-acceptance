@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
       <p>herzlich willkommen zu deiner täglichen Übung! Vielen Dank, dass du dir die Zeit nimmst.<br>
       Du bekommst 10 Tage lang jeden Morgen und Abend eine E-Mail. Anschließend bekommst du einen zweiten Fragebogen.</p>
 
-      <p>Dies ist die Übung für den <strong>$time_of_day</strong> des <strong>$day.</strong> Tages.</p>
+      <p>Dies ist die $email_count. Übung für den $day.</strong> Tage.</p>
 
       <p>Übung für heute: <a href='https://selbstakzeptanz.tomaschmann.de?vpncode=$vpncode&group=1&day=$day'>Hier klicken, um zur Übung zu gelangen</a>.</p>
 
