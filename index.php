@@ -28,7 +28,7 @@
                   <li>an einer Verlosung von 3x 10 € Wunschgutscheinen teilnehmen, </li>
                   <li>bekommst eine 3-monatige gratis Premium Mitgliedschaft der Meditationsapp 7mind</li>
                   <li>und bekommst Zugang zu der fertigen Studie, also den Ergebnissen.</li><br>
-                  <li>Als Student der HSRW bekommst du dann auch deine 3,5 Versuchspersonenstunden gutgeschrieben.</li><br>
+                  <li>Als Student der HSRW bekommst du dann auch deine 3 Versuchspersonenstunden gutgeschrieben.</li><br>
                 </ul>
               <p>
                 Mit deiner Teilnahme leistest du einen großen Beitrag zur Wissenschaft und unterstützt mich sehr bei meiner Bachelorarbeit. Vielen Dank!

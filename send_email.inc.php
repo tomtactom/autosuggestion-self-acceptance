@@ -23,7 +23,7 @@ function sendEmail($email, $group) {
 <h2>Dein Nutzen:</h2>
 <p>
     Durch deine Teilnahme hast du die Möglichkeit, an einer Verlosung von 3x 10 € Wunschgutscheinen teilzunehmen und eine 3-monatige kostenlose Premium-Mitgliedschaft der Meditationsapp 7mind zu erhalten.
-    Als Student:in der HSRW bekommst du außerdem 3,5 Versuchspersonenstunden gutgeschrieben. Dafür benötige ich jedoch deine regelmäßige Teilnahme. Darüber hinaus trägst du aktiv zur wissenschaftlichen Forschung bei und hilfst mir persönlich bei meiner Bachelorarbeit –
+    Als Student:in der HSRW bekommst du außerdem 3 Versuchspersonenstunden gutgeschrieben. Dafür benötige ich jedoch deine regelmäßige Teilnahme. Darüber hinaus trägst du aktiv zur wissenschaftlichen Forschung bei und hilfst mir persönlich bei meiner Bachelorarbeit –
     dein Beitrag ist wertvoll!
 </p>
 
@@ -32,7 +32,7 @@ function sendEmail($email, $group) {
     Indem du diese 10 Tage durchziehst, stärkst du nicht nur deine eigene Selbstakzeptanz, sondern unterstützt auch die psychologische Forschung. Ich danke dir herzlich für dein Engagement und freue mich auf deine Teilnahme!
 </p>
 
-<p>Nach 10 Tagen bekommst du einen persönlichen Link für den zweiten Fragebogen. Nachdem du diesen vollständig ausgefüllt hast und die Übungen regelmäßig durchgegangen bist, kannst du an der Verlosung teilnehmen, bekommst eine 3monatige Premium Mitgliedschaft der Meditationsapp 7mind und als Student:in der HSRW 3,5 Versuchspersonenstunden.<br>
+<p>Nach 10 Tagen bekommst du einen persönlichen Link für den zweiten Fragebogen. Nachdem du diesen vollständig ausgefüllt hast und die Übungen regelmäßig durchgegangen bist, kannst du an der Verlosung teilnehmen, bekommst eine 3monatige Premium Mitgliedschaft der Meditationsapp 7mind und als Student:in der HSRW 3 Versuchspersonenstunden.<br>
     Wenn du Fragen hast oder Unterstützung benötigst, stehe ich dir jederzeit zur Verfügung.
 </p>";
         // Weitere Instruktionen für die Interventionsgruppe
@@ -48,7 +48,7 @@ function sendEmail($email, $group) {
 <h2>Dein Nutzen:</h2>
 <p>
     Durch deine Teilnahme hast du die Möglichkeit, an einer Verlosung von 3x 10 € Wunschgutscheinen teilzunehmen und eine 3-monatige kostenlose Premium-Mitgliedschaft der Meditationsapp 7mind zu erhalten.
-    Als Student:in der HSRW bekommst du außerdem 3,5 Versuchspersonenstunden gutgeschrieben. Dafür benötige ich jedoch deine regelmäßige Teilnahme. Darüber hinaus trägst du aktiv zur wissenschaftlichen Forschung bei und hilfst mir persönlich bei meiner Bachelorarbeit –
+    Als Student:in der HSRW bekommst du außerdem 3 Versuchspersonenstunden gutgeschrieben. Dafür benötige ich jedoch deine regelmäßige Teilnahme. Darüber hinaus trägst du aktiv zur wissenschaftlichen Forschung bei und hilfst mir persönlich bei meiner Bachelorarbeit –
     dein Beitrag ist wertvoll!
 </p>
 
@@ -57,7 +57,7 @@ function sendEmail($email, $group) {
     Mit dem ausfüllen des zweiten Fragebogens, stärkst du nicht nur deine eigene Selbstakzeptanz, sondern unterstützt auch die psychologische Forschung. Ich danke dir herzlich für dein Engagement und freue mich auf deine Teilnahme!
 </p>
 
-<p>Nach 10 Tagen bekommst du einen persönlichen Link für den zweiten Fragebogen. Nachdem du diesen vollständig ausgefüllt hast, kannst du an der Verlosung teilnehmen, bekommst eine 3monatige Premium Mitgliedschaft der Meditationsapp 7mind und als Student:in der HSRW 3,5 Versuchspersonenstunden.<br>
+<p>Nach 10 Tagen bekommst du einen persönlichen Link für den zweiten Fragebogen. Nachdem du diesen vollständig ausgefüllt hast, kannst du an der Verlosung teilnehmen, bekommst eine 3monatige Premium Mitgliedschaft der Meditationsapp 7mind und als Student:in der HSRW 3 Versuchspersonenstunden.<br>
     Wenn du Fragen hast oder Unterstützung benötigst, stehe ich dir jederzeit zur Verfügung.
 </p>";
         // Weitere Instruktionen für die Kontrollgruppe

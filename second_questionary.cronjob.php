@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
 
                   <p>Deine Teilnahme ist für mich von großer Bedeutung, und ich schätze es sehr, dass du dir die Zeit nimmst, um an dieser Umfrage teilzunehmen.</p>
 
-                  <p>Nach Abschluss des zweiten Fragebogens kannst du an der Verlosung der 3x 10 € Wunschgutscheine teilnehmen. Du bekommst den kostenlosen Zugang für 3 Monaten Premium der 7mind Meditationsapp, und die 3,5 Versuchspersonenstunden als Psychologie-Student:in der HSRW. Auch bekommst du Zugang zu den Ergebnissen der Studie 🙂.
+                  <p>Nach Abschluss des zweiten Fragebogens kannst du an der Verlosung der 3x 10 € Wunschgutscheine teilnehmen. Du bekommst den kostenlosen Zugang für 3 Monaten Premium der 7mind Meditationsapp, und die 3 Versuchspersonenstunden als Psychologie-Student:in der HSRW. Auch bekommst du Zugang zu den Ergebnissen der Studie 🙂.
 
                   <p><small>Falls du den Link nicht anklicken kannst, kannst du ihn hier kopieren: <strong><a href='https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."&ugroup=".$row['group']."'>https://www.soscisurvey.de/selbstakzeptanz-1/?q=2&r=".$vpncode."&ugroup=".$row['group']."</a></strong></small></p>
 
