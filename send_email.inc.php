@@ -48,7 +48,7 @@ function sendEmail($email, $group) {
 <h2>Dein Nutzen:</h2>
 <p>
     Durch deine Teilnahme hast du die Möglichkeit, an einer Verlosung von 3x 10 € Wunschgutscheinen teilzunehmen und eine 3-monatige kostenlose Premium-Mitgliedschaft der Meditationsapp 7mind zu erhalten.
-    Als Student:in der HSRW bekommst du außerdem 3 Versuchspersonenstunden gutgeschrieben. Dafür benötige ich jedoch deine regelmäßige Teilnahme. Darüber hinaus trägst du aktiv zur wissenschaftlichen Forschung bei und hilfst mir persönlich bei meiner Bachelorarbeit –
+    Als Student:in der HSRW bekommst du außerdem 3 Versuchspersonenstunden gutgeschrieben. Darüber hinaus trägst du aktiv zur wissenschaftlichen Forschung bei und hilfst mir persönlich bei meiner Bachelorarbeit –
     dein Beitrag ist wertvoll!
 </p>
 
